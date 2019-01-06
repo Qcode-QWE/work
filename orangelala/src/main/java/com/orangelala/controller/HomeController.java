@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.orangelala.domain.RecordResult;
@@ -30,9 +31,14 @@ public class HomeController {
     
     @RequestMapping("/home/itemCat/subnav")
     @ResponseBody
-    public RecordResult subnav(){
-	List<ItemCat> itemCats = itemCatService.getItemCats();
-	return RecordResult.ok(itemCats);
+    public RecordResult subnav(@RequestParam(value="id") List<Integer> ids){
+		List<ItemCat> itemCats;
+		try {
+			itemCats = itemCatService.getItemCats(ids);
+			return RecordResult.ok(itemCats);
+		} catch (Exception e) {
+			return RecordResult.build(400, "发生了错误");
+		}
     }
 
 }

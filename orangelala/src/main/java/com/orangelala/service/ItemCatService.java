@@ -5,5 +5,5 @@ import java.util.List;
 import com.orangelala.pojo.ItemCat;
 
 public interface ItemCatService {
-    public List<ItemCat> getItemCats();
+    public List<ItemCat> getItemCats(List<Integer> ids);
 }

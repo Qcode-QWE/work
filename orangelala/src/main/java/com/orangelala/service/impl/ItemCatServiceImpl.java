@@ -20,8 +20,7 @@ public class ItemCatServiceImpl implements ItemCatService{
      * @Description:获取二级分类的itemCat
      * @return
      */
-    public List<ItemCat> getItemCats() {
-	int[] ids = {2,74,161,249,291,296,378,438,495,558,580,633,699,749,865,903};
+    public List<ItemCat> getItemCats(List<Integer> ids) {
 	List<ItemCat> itemCats = new ArrayList<ItemCat>();
 	
 	for(int id :ids){
