@@ -2,12 +2,12 @@ $(function(){
 	alert(123);
 	var id = {"1":"1"};
 	$.ajax({
-		url : "ajax.html",
+		url : "home/itemCat/subnav.html",
 		dataType : "json",
 		type : "GET",
 		data : id,
 		success : function(data){
-			alert("success"+data["1"]);
+			alert("success"+data.status);
 		},
 		error : function(data) {
 			alert("error",data)

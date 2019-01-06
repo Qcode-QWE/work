@@ -17,7 +17,7 @@
 		<link href="${pageContext.request.contextPath}/css/hmstyle.css" rel="stylesheet" type="text/css" />
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
-
+		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/home.js"></script>
 	</head>
 
 	<body>
