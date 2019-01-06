@@ -8,7 +8,7 @@ public class Test {
     @RequestMapping("/test")
     public String test(){
 	
-	return "success";
+	return "home";
     }
     
 }

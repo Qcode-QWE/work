@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mapper.itemCatMapper">
+<mapper namespace="com.orangelala.mapper.itemCatMapper">
   <resultMap id="BaseResultMap" type="com.orangelala.pojo.itemCat">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
