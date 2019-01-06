@@ -50,9 +50,9 @@
 				<!--悬浮搜索框-->
 
 				<div class="nav white">
-					<div class="logo"><img src="../images/logo.png" /></div>
+					<div class="logo"><img src="${pageContext.request.contextPath}/images/logo.png" /></div>
 					<div class="logoBig">
-						<li><img src="../images/logobig.png" /></li>
+						<li><img src="${pageContext.request.contextPath}/images/logobig.png" /></li>
 					</div>
 
 					<div class="search-bar pr">
@@ -89,10 +89,10 @@
                       <!--轮播 -->
 						<div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
 							<ul class="am-slides">
-								<li class="banner1"><a href="introduction.html"><img src="../images/ad5.jpg" /></a></li>
-								<li class="banner2"><a><img src="../images/ad6.jpg" /></a></li>
-								<li class="banner3"><a><img src="../images/ad7.jpg" /></a></li>
-								<li class="banner4"><a><img src="../images/ad8.jpg" /></a></li>
+								<li class="banner1"><a href="introduction.html"><img src="${pageContext.request.contextPath}/images/ad5.jpg" /></a></li>
+								<li class="banner2"><a><img src="${pageContext.request.contextPath}/images/ad6.jpg" /></a></li>
+								<li class="banner3"><a><img src="${pageContext.request.contextPath}/images/ad7.jpg" /></a></li>
+								<li class="banner4"><a><img src="${pageContext.request.contextPath}/images/ad8.jpg" /></a></li>
 							</ul>
 						</div>
 						<div class="clear"></div>	
@@ -107,7 +107,7 @@
 										<ul class="category-list navTwo" id="js_climit_li">
 											<li>
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -158,7 +158,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -218,7 +218,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -271,7 +271,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -321,7 +321,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -373,7 +373,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -423,7 +423,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -475,7 +475,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/fish.png"></i><a class="ml-22" title="海味、河鲜">海味/河鲜</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/fish.png"></i><a class="ml-22" title="海味、河鲜">海味/河鲜</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -533,7 +533,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/tea.png"></i><a class="ml-22" title="花茶、果茶">花茶/果茶</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/tea.png"></i><a class="ml-22" title="花茶、果茶">花茶/果茶</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -582,7 +582,7 @@
 											</li>
 											<li>
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/package.png"></i><a class="ml-22" title="品牌、礼包">品牌/礼包</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/package.png"></i><a class="ml-22" title="品牌、礼包">品牌/礼包</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -632,7 +632,7 @@
                                  <!--比较多的导航	-->										
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -692,7 +692,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -745,7 +745,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -795,7 +795,7 @@
 											</li>
 											<li>
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -847,7 +847,7 @@
 											</li>											
 															<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -897,7 +897,7 @@
 											</li>
 											<li >
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="${pageContext.request.contextPath}/images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -976,22 +976,22 @@
 					<!--小导航 -->
 					<div class="am-g am-g-fixed smallnav">
 						<div class="am-u-sm-3">
-							<a href="sort.html"><img src="../images/navsmall.jpg" />
+							<a href="sort.html"><img src="${pageContext.request.contextPath}/images/navsmall.jpg" />
 								<div class="title">商品分类</div>
 							</a>
 						</div>
 						<div class="am-u-sm-3">
-							<a href="#"><img src="../images/huismall.jpg" />
+							<a href="#"><img src="${pageContext.request.contextPath}/images/huismall.jpg" />
 								<div class="title">大聚惠</div>
 							</a>
 						</div>
 						<div class="am-u-sm-3">
-							<a href="#"><img src="../images/mansmall.jpg" />
+							<a href="#"><img src="${pageContext.request.contextPath}/images/mansmall.jpg" />
 								<div class="title">个人中心</div>
 							</a>
 						</div>
 						<div class="am-u-sm-3">
-							<a href="#"><img src="../images/moneysmall.jpg" />
+							<a href="#"><img src="${pageContext.request.contextPath}/images/moneysmall.jpg" />
 								<div class="title">投资理财</div>
 							</a>
 						</div>
@@ -1000,10 +1000,10 @@
 					
 				<!--各类活动-->
 				<div class="row">
-					<li><a><img src="../images/row1.jpg"/></a></li>
-					<li><a><img src="../images/row2.jpg"/></a></li>
-					<li><a><img src="../images/row3.jpg"/></a></li>
-					<li><a><img src="../images/row4.jpg"/></a></li>
+					<li><a><img src="${pageContext.request.contextPath}/images/row1.jpg"/></a></li>
+					<li><a><img src="${pageContext.request.contextPath}/images/row2.jpg"/></a></li>
+					<li><a><img src="${pageContext.request.contextPath}/images/row3.jpg"/></a></li>
+					<li><a><img src="${pageContext.request.contextPath}/images/row4.jpg"/></a></li>
 				</div>
 				<div class="clear"></div>	
 					<!--走马灯 -->
@@ -1014,12 +1014,12 @@
 
 							<ul>
 								<li class="title-first"><a target="_blank" href="#">
-									<img src="../images/TJ2.jpg"></img>
+									<img src="${pageContext.request.contextPath}/images/TJ2.jpg"></img>
 									<span>[特惠]</span>洋河年末大促，低至两件五折							
 								</a></li>
 								<li class="title-first"><a target="_blank" href="#">
 									<span>[公告]</span>商城与广州市签署战略合作协议
-								     <img src="../images/TJ.jpg"></img>
+								     <img src="${pageContext.request.contextPath}/images/TJ.jpg"></img>
 								     <p>XXXXXXXXXXXXXXXXXX</p>
 							    </a></li>																    							    
 								<li><a target="_blank" href="#"><span>[特惠]</span>女生节商城爆品1分秒	</a></li>
@@ -1076,7 +1076,7 @@
 					  <div class="am-g am-g-fixed sale">
 						<div class="am-u-sm-3 sale-item">
 							<div class="s-img">
-								<a href="# "><img src="../images/sale3.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/sale3.jpg" /></a>
 							</div>
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
@@ -1088,7 +1088,7 @@
 						
 						<div class="am-u-sm-3 sale-item">
 							<div class="s-img">
-								<a href="# "><img src="../images/sale2.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/sale2.jpg" /></a>
 							</div>
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
@@ -1100,7 +1100,7 @@
 						
 						<div class="am-u-sm-3 sale-item">
 							<div class="s-img">
-								<a href="# "><img src="../images/sale1.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/sale1.jpg" /></a>
 							</div>
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
@@ -1112,7 +1112,7 @@
 						
 						<div class="am-u-sm-3 sale-item">
 							<div class="s-img">
-								<a href="# "><img src="../images/sale2.jpg " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/sale2.jpg " /></a>
 							</div>
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
@@ -1158,7 +1158,7 @@
 								<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>								
 							</div>							
 							<a href="# ">
-								<img src="../images/5.jpg" />
+								<img src="${pageContext.request.contextPath}/images/5.jpg" />
 								<div class="outer-con ">
 									<div class="title ">
 										零食大礼包开抢啦
@@ -1182,7 +1182,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act1.png" /></a>						
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act1.png" /></a>						
 						</div>
 
 						<li>
@@ -1197,7 +1197,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/1.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/1.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1212,7 +1212,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/2.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/2.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1227,7 +1227,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/5.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/5.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1242,7 +1242,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/3.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/3.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1257,7 +1257,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/4.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/4.jpg" /></a>
 						</div>	
 						</li>						
 					</div>
@@ -1303,7 +1303,7 @@
 										零食大礼包
 									</div>									
 								</div>
-                                  <img src="../images/11.jpg" />								
+                                  <img src="${pageContext.request.contextPath}/images/11.jpg" />								
 							</a>
 							<div class="triangle-topright"></div>						
 						</div>
@@ -1319,7 +1319,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act2.png " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act2.png " /></a>
 								
 							</div>
                         
@@ -1335,7 +1335,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/6.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/6.jpg" /></a>
 							</div>
                         </li>
                         <li>
@@ -1350,7 +1350,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/7.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/7.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1365,7 +1365,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/10.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/10.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1380,7 +1380,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/8.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/8.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1395,7 +1395,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/9.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/9.jpg" /></a>
 						</div>
 						</li>
 					</div>
@@ -1436,7 +1436,7 @@
 								<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>								
 							</div>							
 							<a href="# ">
-								<img src="../images/5.jpg" />
+								<img src="${pageContext.request.contextPath}/images/5.jpg" />
 								<div class="outer-con ">
 									<div class="title ">
 										零食大礼包开抢啦
@@ -1460,7 +1460,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act1.png" /></a>						
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act1.png" /></a>						
 						</div>
 
 						<li>
@@ -1475,7 +1475,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/1.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/1.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1490,7 +1490,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/2.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/2.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1505,7 +1505,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/5.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/5.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1520,7 +1520,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/3.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/3.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1535,7 +1535,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/4.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/4.jpg" /></a>
 						</div>	
 						</li>						
 					</div>
@@ -1580,7 +1580,7 @@
 										零食大礼包
 									</div>									
 								</div>
-                                  <img src="../images/11.jpg" />								
+                                  <img src="${pageContext.request.contextPath}/images/11.jpg" />								
 							</a>
 							<div class="triangle-topright"></div>						
 						</div>
@@ -1596,7 +1596,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act2.png " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act2.png " /></a>
 								
 							</div>
                         
@@ -1612,7 +1612,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/6.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/6.jpg" /></a>
 							</div>
                         </li>
                         <li>
@@ -1627,7 +1627,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/7.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/7.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1642,7 +1642,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/10.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/10.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1657,7 +1657,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/8.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/8.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1672,7 +1672,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/9.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/9.jpg" /></a>
 						</div>
 						</li>
 					</div>
@@ -1713,7 +1713,7 @@
 								<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>								
 							</div>							
 							<a href="# ">
-								<img src="../images/5.jpg" />
+								<img src="${pageContext.request.contextPath}/images/5.jpg" />
 								<div class="outer-con ">
 									<div class="title ">
 										零食大礼包开抢啦
@@ -1737,7 +1737,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act1.png" /></a>						
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act1.png" /></a>						
 						</div>
 
 						<li>
@@ -1752,7 +1752,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/1.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/1.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1767,7 +1767,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/2.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/2.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -1782,7 +1782,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/5.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/5.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1797,7 +1797,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/3.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/3.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -1812,7 +1812,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/4.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/4.jpg" /></a>
 						</div>	
 						</li>						
 					</div>
@@ -1857,7 +1857,7 @@
 										零食大礼包
 									</div>									
 								</div>
-                                  <img src="../images/11.jpg" />								
+                                  <img src="${pageContext.request.contextPath}/images/11.jpg" />								
 							</a>
 							<div class="triangle-topright"></div>						
 						</div>
@@ -1873,7 +1873,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act2.png " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act2.png " /></a>
 								
 							</div>
                         
@@ -1889,7 +1889,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/6.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/6.jpg" /></a>
 							</div>
                         </li>
                         <li>
@@ -1904,7 +1904,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/7.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/7.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1919,7 +1919,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/10.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/10.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1934,7 +1934,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/8.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/8.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -1949,7 +1949,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/9.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/9.jpg" /></a>
 						</div>
 						</li>
 					</div>
@@ -1993,7 +1993,7 @@
 								<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>								
 							</div>							
 							<a href="# ">
-								<img src="../images/5.jpg" />
+								<img src="${pageContext.request.contextPath}/images/5.jpg" />
 								<div class="outer-con ">
 									<div class="title ">
 										零食大礼包开抢啦
@@ -2017,7 +2017,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act1.png" /></a>						
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act1.png" /></a>						
 						</div>
 
 						<li>
@@ -2032,7 +2032,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/1.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/1.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -2047,7 +2047,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/2.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/2.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -2062,7 +2062,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/5.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/5.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -2077,7 +2077,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/3.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/3.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -2092,7 +2092,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/4.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/4.jpg" /></a>
 						</div>	
 						</li>						
 					</div>
@@ -2137,7 +2137,7 @@
 										零食大礼包
 									</div>									
 								</div>
-                                  <img src="../images/11.jpg" />								
+                                  <img src="${pageContext.request.contextPath}/images/11.jpg" />								
 							</a>
 							<div class="triangle-topright"></div>						
 						</div>
@@ -2153,7 +2153,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act2.png " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act2.png " /></a>
 								
 							</div>
                         
@@ -2169,7 +2169,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/6.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/6.jpg" /></a>
 							</div>
                         </li>
                         <li>
@@ -2184,7 +2184,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/7.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/7.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2199,7 +2199,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/10.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/10.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2214,7 +2214,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/8.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/8.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2229,7 +2229,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/9.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/9.jpg" /></a>
 						</div>
 						</li>
 					</div>
@@ -2270,7 +2270,7 @@
 								<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>								
 							</div>							
 							<a href="# ">
-								<img src="../images/5.jpg" />
+								<img src="${pageContext.request.contextPath}/images/5.jpg" />
 								<div class="outer-con ">
 									<div class="title ">
 										零食大礼包开抢啦
@@ -2294,7 +2294,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act1.png" /></a>						
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act1.png" /></a>						
 						</div>
 
 						<li>
@@ -2309,7 +2309,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/1.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/1.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -2324,7 +2324,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/2.jpg " /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/2.jpg " /></a>
 						</div>
 						</li>
 						<li>
@@ -2339,7 +2339,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/5.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/5.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -2354,7 +2354,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/3.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/3.jpg" /></a>
 						</div>	
 						</li>
 						<li>
@@ -2369,7 +2369,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/4.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/4.jpg" /></a>
 						</div>	
 						</li>						
 					</div>
@@ -2411,7 +2411,7 @@
 										零食大礼包
 									</div>									
 								</div>
-                                  <img src="../images/11.jpg" />								
+                                  <img src="${pageContext.request.contextPath}/images/11.jpg" />								
 							</a>
 							<div class="triangle-topright"></div>						
 						</div>
@@ -2427,7 +2427,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/act2.png " /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/act2.png " /></a>
 								
 							</div>
                         
@@ -2443,7 +2443,7 @@
 									</div>
 									
 								</div>
-								<a href="# "><img src="../images/6.jpg" /></a>
+								<a href="# "><img src="${pageContext.request.contextPath}/images/6.jpg" /></a>
 							</div>
                         </li>
                         <li>
@@ -2458,7 +2458,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/7.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/7.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2473,7 +2473,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/10.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/10.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2488,7 +2488,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/8.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/8.jpg" /></a>
 						</div>
                         </li>
                         <li>
@@ -2503,7 +2503,7 @@
 								</div>
 								
 							</div>
-							<a href="# "><img src="../images/9.jpg" /></a>
+							<a href="# "><img src="${pageContext.request.contextPath}/images/9.jpg" /></a>
 						</div>
 						</li>
 					</div>
@@ -2556,7 +2556,7 @@
 						</a>
 						<div class="ibar_login_box status_login ">
 							<div class="avatar_box ">
-								<p class="avatar_imgbox "><img src="../images/no-img_mid_.jpg " /></p>
+								<p class="avatar_imgbox "><img src="${pageContext.request.contextPath}/images/no-img_mid_.jpg " /></p>
 								<ul class="user_info ">
 									<li>用户名：sl1903</li>
 									<li>级&nbsp;别：普通会员</li>
@@ -2601,7 +2601,7 @@
 
 					<div id="brand " class="item ">
 						<a href="#">
-							<span class="wdsc "><img src="../images/wdsc.png " /></span>
+							<span class="wdsc "><img src="${pageContext.request.contextPath}/images/wdsc.png " /></span>
 						</a>
 						<div class="mp_tooltip ">
 							我的收藏
@@ -2611,7 +2611,7 @@
 
 					<div id="broadcast " class="item ">
 						<a href="# ">
-							<span class="chongzhi "><img src="../images/chongzhi.png " /></span>
+							<span class="chongzhi "><img src="${pageContext.request.contextPath}/images/chongzhi.png " /></span>
 						</a>
 						<div class="mp_tooltip ">
 							我要充值
@@ -2627,9 +2627,9 @@
 						<!--二维码 -->
 						<li class="qtitem ">
 							<a href="#none "><span class="mpbtn_qrcode "></span></a>
-							<div class="mp_qrcode " style="display:none; "><img src="../images/weixin_code_145.png " /><i class="icon_arrow_white "></i></div>
+							<div class="mp_qrcode " style="display:none; "><img src="${pageContext.request.contextPath}/images/weixin_code_145.png " /><i class="icon_arrow_white "></i></div>
 						</li>
-						<li class="qtitem ">
+						<li class="qtitem">
 							<a href="#top " class="return_top "><span class="top "></span></a>
 						</li>
 					</div>
