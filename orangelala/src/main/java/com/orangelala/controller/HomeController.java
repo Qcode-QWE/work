@@ -53,11 +53,11 @@ public class HomeController {
     @RequestMapping("/home/itemCat/subnav")
     @ResponseBody
     public RecordResult subnav(@RequestParam(value="id") List<Integer> ids){
-	List<ItemCat> itemCats;
+	List<ItemCat> itempppCats;
 	try {
-	    itemCats = itemCatService.getItemCats(ids);
+		itempppCats = itemCatService.getItemCats(ids);
 	    //啊啊啊
-	    return RecordResult.ok(itemCats);
+	    return RecordResult.ok(itempppCats);
 	} catch (Exception e) {
 	    return RecordResult.build(400, "发生了错误");
 	}
