@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.orangelala.domain.RecordResult;
+import com.orangelala.pojo.Content;
 import com.orangelala.pojo.Item;
 import com.orangelala.pojo.ItemCat;
+import com.orangelala.service.ContentService;
 import com.orangelala.service.HomeService;
 import com.orangelala.service.ItemCatService;
 import com.orangelala.service.ItemService;
@@ -34,13 +36,14 @@ public class HomeController {
     private ItemCatService itemCatService;
     @Autowired
     private ItemService itemService;
+    @Autowired
+    private ContentService contentService;
+    
     
     @RequestMapping("/home")
     public String home(){
 	return "home";
     }
-    
-    
     
     /**
      * @Description:一级菜单
@@ -59,6 +62,11 @@ public class HomeController {
 	}
     }
     
+    /**
+     * @Description:二级菜单
+     * @param id
+     * @return
+     */
     @RequestMapping("/home/itemCat/subnavTwo")
     @ResponseBody
     public RecordResult subnavTwo(@RequestParam("id") Long id){
@@ -85,5 +93,22 @@ public class HomeController {
 	
     }
     
-
+    /**
+     * @Description:首页大广告
+     * @param id
+     * @return
+     */
+    @RequestMapping("/home/content/shuffling")
+    @ResponseBody
+    public RecordResult shuffling(@RequestParam("id") Long id){
+	try {
+	    List<Content> contents = contentService.getContentByCategoryId(id);
+	    return RecordResult.ok(contents);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
 }
