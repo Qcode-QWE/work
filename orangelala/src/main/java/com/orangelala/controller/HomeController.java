@@ -1,5 +1,6 @@
 package com.orangelala.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,11 +54,12 @@ public class HomeController {
     @RequestMapping("/home/itemCat/subnav")
     @ResponseBody
     public RecordResult subnav(@RequestParam(value="id") List<Integer> ids){
-	List<ItemCat> itempppCats;
+
+	List<ItemCat> itemCats = new ArrayList<ItemCat>();
 	try {
-		itempppCats = itemCatService.getItemCats(ids);
+		itemCats = itemCatService.getItemCats(ids);
 	    //啊啊啊
-	    return RecordResult.ok(itempppCats);
+	    return RecordResult.ok(itemCats);
 	} catch (Exception e) {
 	    return RecordResult.build(400, "发生了错误");
 	}
