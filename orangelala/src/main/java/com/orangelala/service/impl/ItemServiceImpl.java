@@ -1,5 +1,6 @@
 package com.orangelala.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,24 @@ public class ItemServiceImpl implements ItemService {
 	List<Item> items = itemMapper.selectByExample(itemExample);
 	return items;
     }
+    
+    /**
+     * @Description:获取秒杀商品
+     * @return
+     */
+    public List<Item> getKillItem() throws Exception{
+	
+	List<Long> idsList = new ArrayList<Long>();
+	idsList.add(54227992398604L);
+	idsList.add(54227992398601L);
+	idsList.add(54227992398602L);
+	idsList.add(54227992398603L);
+	ItemExample example = new ItemExample();
+	Criteria criteria = example.createCriteria();
+	criteria.andIdIn(idsList);
+	List<Item> items = itemMapper.selectByExample(example);
+	return items;
+    }
+    
 
 }
