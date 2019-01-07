@@ -8,5 +8,5 @@ import com.orangelala.pojo.ItemCat;
 public interface ItemService {
 
     List<Item> getItemsByItemCat(ItemCat itemCat) throws Exception;
-
+    public List<Item> getKillItem() throws Exception;
 }

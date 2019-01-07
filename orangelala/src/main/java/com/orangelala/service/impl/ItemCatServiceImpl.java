@@ -52,6 +52,27 @@ public class ItemCatServiceImpl implements ItemCatService{
 	ItemCatExample example = new ItemCatExample();
 	PageHelper.startPage(1,4);
 	Criteria criteria = example.createCriteria();
+	//根据id查询
+	criteria.andParentIdEqualTo(id);
+	List<ItemCat> itemCats = itemCatMapper.selectByExample(example);
+	return itemCats;
+    }
+
+
+    /**
+     * @Description:根据二级目录id获取16个三级目录id
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<ItemCat> getThreeItemCats(Long id) throws Exception {
+	//分页处理
+	// 在执行查询前,进行分页
+	ItemCatExample example = new ItemCatExample();
+	PageHelper.startPage(1, 16);
+	Criteria criteria = example.createCriteria();
+	// 根据id查询
 	criteria.andParentIdEqualTo(id);
 	List<ItemCat> itemCats = itemCatMapper.selectByExample(example);
 	return itemCats;
