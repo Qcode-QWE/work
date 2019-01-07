@@ -56,6 +56,7 @@ public class HomeController {
 	List<ItemCat> itemCats;
 	try {
 	    itemCats = itemCatService.getItemCats(ids);
+	    //啊啊啊
 	    return RecordResult.ok(itemCats);
 	} catch (Exception e) {
 	    return RecordResult.build(400, "发生了错误");
@@ -102,6 +103,7 @@ public class HomeController {
     @ResponseBody
     public RecordResult shuffling(@RequestParam("id") Long id){
 	try {
+		System.out.println("running");
 	    List<Content> contents = contentService.getContentByCategoryId(id);
 	    return RecordResult.ok(contents);
 	} catch (Exception e) {
