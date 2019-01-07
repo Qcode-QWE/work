@@ -1,9 +1,11 @@
 package com.orangelala.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.orangelala.domain.RecordResult;
+import com.orangelala.service.LoginService;
 
 /**  
 * <p>Title: LoginController.java</p>  
@@ -14,8 +16,11 @@ import com.orangelala.domain.RecordResult;
 */ 
 @Controller
 public class LoginController {
+	
+	 @Autowired
+	 private LoginService loginService;
     
-    @RequestMapping("/login/user")
+    @RequestMapping("/login/loginUI")
     public String loginUI(){
 	return "login";
     }
@@ -25,9 +30,9 @@ public class LoginController {
 	return "register";///aaaaaaaaaaaaa
     }
     
-    public String login(String userName,String password){
-	
-	
+    @RequestMapping("/login/login")
+    public String login(String username,String password){
+	loginService
 	return "home";
 	
     }
