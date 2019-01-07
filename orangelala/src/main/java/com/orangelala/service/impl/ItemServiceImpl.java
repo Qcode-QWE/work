@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import redis.clients.jedis.Jedis;
+
 import com.github.pagehelper.PageHelper;
 import com.orangelala.mapper.ItemMapper;
 import com.orangelala.pojo.Item;
@@ -13,6 +15,7 @@ import com.orangelala.pojo.ItemCat;
 import com.orangelala.pojo.ItemExample;
 import com.orangelala.pojo.ItemExample.Criteria;
 import com.orangelala.service.ItemService;
+import com.orangelala.utils.JedisUtils;
 
 /**  
 * <p>Title: ItemServiceImpl.java</p>  
@@ -26,6 +29,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemMapper itemMapper;
+    
+    private static Boolean flage = false;
     
     /**
      * @Description:根据商品类目id查询商品
@@ -63,6 +68,46 @@ public class ItemServiceImpl implements ItemService {
 	List<Item> items = itemMapper.selectByExample(example);
 	return items;
     }
+
+    /**
+     * @Description:判断能否完成秒杀
+     * @param id
+     * @return(0:还没开始,1:秒杀失败,2:秒杀成功)
+     * @throws Exception
+     */
+    @Override
+    public int updateKillItem(Long id) throws Exception {
+	//判断秒杀是否开始
+	Jedis jedis = JedisUtils.getJedis();
+	String str = jedis.get("KILLITEMFLAGE");
+	//秒杀还没开始
+	if(str!=null&&str.length()>0){
+	   return 0;
+	}else{
+	    // 判断商品是否已经被秒杀
+	    if(!flage){
+		synchronized (flage) {
+		    str = jedis.get("KILLITEMNUM-" + id);
+		    int num = Integer.valueOf(str);
+		    if (num > 0) {
+			jedis.set("KILLITEMNUM-" + id, String.valueOf(num-1));
+			JedisUtils.close(jedis);
+			flage = true;
+			return 2;
+		    }else{
+			JedisUtils.close(jedis);
+			return 1;
+		    }
+		}
+	    }
+	    JedisUtils.close(jedis);
+	    return 1;
+	}
+    }
+    
+    
+    
+    
     
 
 }

@@ -162,7 +162,17 @@ public class HomeController {
 	}
     }
     
-    
+    public RecordResult secondsKillAble(@RequestParam("id") Long id){
+	try {
+	    int i = itemService.updateKillItem(id);
+	    return RecordResult.ok(i);
+	} catch (Exception e) {
+	    // TODO: handle exception
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+	
+    }
     
     
     
