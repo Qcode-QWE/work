@@ -176,7 +176,7 @@ public class HomeController {
 	} catch (Exception e) {
 	    // TODO: handle exception
 	    e.printStackTrace();
-	    return RecordResult.build(400, "发生了错误");
+	    return RecordResult.build(400, "发生了错误");//
 	}
 	
     }
