@@ -28,7 +28,7 @@ public class LoginController {
     public String login(String userName,String password){
 	
 	
-	
+	return "home";
 	
     }
     
