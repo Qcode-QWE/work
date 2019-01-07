@@ -162,8 +162,21 @@ public class HomeController {
 	}
     }
     
-    
-    
+    /**
+     * @Description:判断是否能秒杀
+     * @return
+     */
+    @RequestMapping("/home/secondsKill/itemAble")
+    @ResponseBody
+    public RecordResult secondsKillAble(@RequestParam("id") Long id){
+   	try {
+   	   int i = itemService.updateKillItem(id);
+   	   return RecordResult.ok(i);
+   	} catch (Exception e) {
+   	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+   	}
+       }
     
     
 }
