@@ -13,4 +13,5 @@ import com.orangelala.pojo.Content;
 */ 
 public interface ContentService {
     public List<Content> getContentByCategoryId(Long cid) throws Exception;
+    public List<Content> getContentByCategoryIdOrderBy(Long cid) throws Exception;
 }
