@@ -172,7 +172,7 @@ public class HomeController {
     public RecordResult secondsKillAble(@RequestParam("id") Long id){
 	try {
 	    int i = itemService.updateKillItem(id);
-	    return RecordResult.ok(i);
+	    return RecordResult.ok(i);//
 	} catch (Exception e) {
 	    // TODO: handle exception
 	    e.printStackTrace();
