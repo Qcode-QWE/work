@@ -103,7 +103,7 @@ public class HomeController {
     public RecordResult shuffling(@RequestParam("id") Long id){
 	try {
 	    List<Content> contents = contentService.getContentByCategoryId(id);
-	    return RecordResult.ok(contents);a
+	    return RecordResult.ok(contents);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");
