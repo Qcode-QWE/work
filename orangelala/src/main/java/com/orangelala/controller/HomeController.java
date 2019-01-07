@@ -162,6 +162,13 @@ public class HomeController {
 	}
     }
     
+    /**
+     * @Description:判断是否能秒杀
+     * @param id
+     * @return(0:还没开始,1:秒杀失败,2:秒杀成功)
+     */
+    @RequestMapping("/home/secondsKill/itemAble")
+    @ResponseBody
     public RecordResult secondsKillAble(@RequestParam("id") Long id){
 	try {
 	    int i = itemService.updateKillItem(id);
