@@ -67,10 +67,10 @@
                       <!--轮播 -->
 						<div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
 							<ul class="am-slides">
-								<li class="banner1"><a href="introduction.html"><img src="${pageContext.request.contextPath}/images/ad5.jpg" /></a></li>
-								<li class="banner2"><a><img src="${pageContext.request.contextPath}/images/ad6.jpg" /></a></li>
-								<li class="banner3"><a><img src="${pageContext.request.contextPath}/images/ad7.jpg" /></a></li>
-								<li class="banner4"><a><img src="${pageContext.request.contextPath}/images/ad8.jpg" /></a></li>
+								<li class="banner1"><a href=""><img src="" /></a></li>
+								<li class="banner2"><a href=""><img src="" /></a></li>
+								<li class="banner3"><a href=""><img src="" /></a></li>
+								<li class="banner4"><a href=""><img src="" /></a></li>
 							</ul>
 						</div>
 						<div class="clear"></div>	

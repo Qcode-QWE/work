@@ -54,9 +54,11 @@ public class HomeController {
     @RequestMapping("/home/itemCat/subnav")
     @ResponseBody
     public RecordResult subnav(@RequestParam(value="id") List<Integer> ids){
-	List<ItemCat> itemCatsss = new ArrayList<ItemCat>();
+
+	List<ItemCat> itemCats = new ArrayList<ItemCat>();
 	try {
-	    itemCats = itemCatService.getItemCats(ids);
+		itemCats = itemCatService.getItemCats(ids);
+	    //啊啊啊
 	    return RecordResult.ok(itemCats);
 	} catch (Exception e) {
 	    return RecordResult.build(400, "发生了错误");
@@ -103,6 +105,7 @@ public class HomeController {
     @ResponseBody
     public RecordResult shuffling(@RequestParam("id") Long id){
 	try {
+		System.out.println("running");
 	    List<Content> contents = contentService.getContentByCategoryId(id);
 	    return RecordResult.ok(contents);
 	} catch (Exception e) {
