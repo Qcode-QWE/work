@@ -22,7 +22,7 @@ public class LoginController {
     
     @RequestMapping("/register/user")
     public String registerUI(){
-	return "register";
+	return "register";///aaaaaa
     }
     
     public String login(String userName,String password){
