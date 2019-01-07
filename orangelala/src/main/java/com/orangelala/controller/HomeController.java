@@ -77,10 +77,10 @@ public class HomeController {
 	    map.put("subnavTwo", itemCats);
 	    //三级菜单类目
 	    Map<String, Object> itemMap = new HashMap<String,Object>();
-	    List<Item> items;
+	    List<ItemCat> items;
 	    if(itemCats!=null && itemCats.size()>0){
 		for(ItemCat itemCat:itemCats){
-		    items = itemService.getItemsByItemCat(itemCat);
+		    items = itemCatService.getThreeItemCats(itemCat.getId());
 		    itemMap.put(itemCat.getName(), items);
 		}
 	    }
@@ -103,12 +103,67 @@ public class HomeController {
     public RecordResult shuffling(@RequestParam("id") Long id){
 	try {
 	    List<Content> contents = contentService.getContentByCategoryId(id);
-	    return RecordResult.ok(contents);aaa
+	    return RecordResult.ok(contents);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");
 	}
     }
+    
+    /**
+     * @Description:广告列表
+     * @param id
+     * @return
+     */
+    @RequestMapping("/home/content/minAD")
+    @ResponseBody
+    public RecordResult minAD(@RequestParam("id") Long id){
+	try {
+	    List<Content> contents = contentService.getContentByCategoryId(id);
+	    return RecordResult.ok(contents);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
+    /**
+     * @Description:根据id查询7篇文章
+     * @param id
+     * @return
+     */
+    @RequestMapping("/home/content/news")
+    @ResponseBody
+    public RecordResult news(@RequestParam("id") Long id){
+	try {
+	    List<Content> contents = contentService.getContentByCategoryIdOrderBy(id);
+	    return RecordResult.ok(contents);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
+    /**
+     * @Description:返回四个秒杀商品id
+     * @return
+     */
+    @RequestMapping("/home/secondsKill/items")
+    @ResponseBody
+    public RecordResult secondsKill(){
+	try {
+	    List<Item> items = itemService.getKillItem();
+	    return RecordResult.ok(items);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
+    
     
     
 }

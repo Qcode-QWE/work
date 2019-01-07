@@ -14,4 +14,5 @@ import com.orangelala.pojo.ItemCat;
 public interface ItemCatService {
     public List<ItemCat> getItemCats(List<Integer> ids) throws Exception;
     public List<ItemCat> getTowItemCats(Long id) throws Exception;
+    public List<ItemCat> getThreeItemCats(Long id) throws Exception;
 }
