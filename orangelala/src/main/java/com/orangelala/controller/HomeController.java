@@ -77,10 +77,10 @@ public class HomeController {
 	    map.put("subnavTwo", itemCats);
 	    //三级菜单类目
 	    Map<String, Object> itemMap = new HashMap<String,Object>();
-	    List<Item> items;
+	    List<ItemCat> items;
 	    if(itemCats!=null && itemCats.size()>0){
 		for(ItemCat itemCat:itemCats){
-		    items = itemService.getItemsByItemCat(itemCat);
+		    items = itemCatService.getThreeItemCats(itemCat.getId());
 		    itemMap.put(itemCat.getName(), items);
 		}
 	    }
@@ -103,7 +103,7 @@ public class HomeController {
     public RecordResult shuffling(@RequestParam("id") Long id){
 	try {
 	    List<Content> contents = contentService.getContentByCategoryId(id);
-	    return RecordResult.ok(contents);aaa
+	    return RecordResult.ok(contents);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");
