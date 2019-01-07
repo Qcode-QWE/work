@@ -98,7 +98,7 @@ form,.am-cf,.partner{max-width:640px;margin:20px auto ;}
 }
 @media screen and (min-width:1025px){
 
-.login-box,.login-box2 {width: 100%;max-width:360px;height: 430px;position: absolute;margin-top:20px;margin-left:0px;background:#f8f8f8;right:2%;padding:10px 20px;}
+.login-box,.login-box2 {width: 100%;max-width:360px;height: 400px;position: absolute;margin-top:20px;margin-left:0px;background:#f8f8f8;right:2%;padding:10px 20px;}
 .login-box2 {height:430px;}
 .login-boxtitle {max-width: 1000px;margin: 0px auto;height: 60px;}
 .login-boxtitle img{height:60px;}
