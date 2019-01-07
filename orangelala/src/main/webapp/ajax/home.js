@@ -20,7 +20,7 @@ $(function(){
 		        		for(var i = 0;i<one.length;i++){
 		        			one.eq(i).attr("title",data.data[i]["name"]);
 		        			one.eq(i).text(data.data[i]["name"]);
-		        			findTwoByOne(data.data[i]["id"],i);
+		        			findTwoAndThreeByOne(data.data[i]["id"],i); //根据一级标签查找二三级标签
 		        		}
 		        		
 		        	}
@@ -32,8 +32,19 @@ $(function(){
 		);
 })
 
-
-function findTwoByOne(id,num){
+//根据一级标签查找二三级标签
+//<div class="sort-side">
+//	<dl class="dl-sort">
+//		<dt><span title="蛋糕">蛋糕</span></dt>  //二级标签
+//		<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>  //三级标签.......
+//	</dl>
+//	<dl class="dl-sort">
+//		<dt><span title="蛋糕">点心</span></dt>
+//		<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+//		</dl>
+//	</div>
+//</div>
+function findTwoAndThreeByOne(id,num){
 	var url = "home/itemCat/subnavTwo.html";
 	//设置数组模式
 	$.ajax(
