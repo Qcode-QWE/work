@@ -1,3 +1,4 @@
+//显示商品栏一级标签@RequestMapping("/home/itemCat/subnav")
 $(function(){
 	var url = "home/itemCat/subnav.html";
 		
@@ -5,16 +6,16 @@ $(function(){
 		//设置数组模式
 		$.ajax(
 			{
-				type: "get",
+				type: "post",
+				timeout : 5000,    //设置超时时间5秒钟
 		        url: url,
-		        data: {"id":a},
+		        data: {"id":a},  
 		        traditional: true,
 		        cache: false,
-		        async : false,
+		        async : true,    //async必须设置为async:true，timeout才生效；如果设置为async:false，则锁住浏览器，禁止一切操作，直到请求有返回结果。
 		        dataType: "json",
 		        success: function (data)
 		        {
-		        	
 		        	if(data.status==200){
 		        		var one = $(".ml-22");  //<a class="ml-22" title="饼干、膨化">饼干/膨化</a>
 		        		for(var i = 0;i<one.length;i++){
@@ -25,8 +26,14 @@ $(function(){
 		        		
 		        	}
 		        },
-		        error:function () {      
-		            alert("请求失败！");
+		        error:function (data,status) { 
+	        		if(status=='timeout'){
+		        		alert("请求超时");
+		        		ajaxTimeOut.abort();//取消请求
+		        	//	window.location.href="index.jsp";
+		        	}else{
+		        		 alert("请求失败！");
+		        	}
 		        }
 			}
 		);
@@ -50,18 +57,17 @@ function findTwoAndThreeByOne(id,num){
 	$.ajax(
 		{
 			type: "get",
-	        url: url,
+			timeout :5000,
+	        url: url,     
 	        data: {"id":id},
 	        traditional: true,
 	        cache: false,
-	        async : false,
+	        async : true,
 	        dataType: "json",
 	        success: function (data)
 	        {
-	        	console.log(data);
 	        	var two = $(".sort-side").eq(num);
 	        	two.empty();
-	        	
 	        	for(var twoLen=0;twoLen<data.data.subnavTwo.length;twoLen++){
 	        		var txt1=$("<dl class='dl-sort'></dl>");
 	        		two.append(txt1);
@@ -87,14 +93,57 @@ function findTwoAndThreeByOne(id,num){
 	        			txt1.append(txt4);
 	        		}
 	        	}
-	        	
-	        	
 	        },
-	        error:function () {      
-	            alert("请求失败！");
+	        error:function (data,status) { 
+        		if(status=='timeout'){
+	        		alert("请求超时");
+	        		ajaxTimeOut.abort();//取消请求
+	        	//	window.location.href="index.jsp";
+	        	}else{
+	        		 alert("请求失败！");
+	        	}
 	        }
 		}
 	);
 }
 
+//显示大广告图片@RequestMapping("/home/content/shuffling")
+//<ul class="am-slides">
+//<li class="banner1"><a href=""><img src="" /></a></li>
+//<li class="banner2"><a href=""><img src="" /></a></li>
+//<li class="banner3"><a href=""><img src="" /></a></li>
+//<li class="banner4"><a href=""><img src="" /></a></li>
+//</ul>
+$(function(){
+	var url = "home/content/shuffling.html";
+	var data ={"id":89};
+	$.ajax({
+		type: "get",
+		timeout : 5000,  
+        url: url,
+        data: data,
+        traditional: true,
+        cache: false,  
+        async : true,
+        dataType: "json",
+        success:function(data){
+        	console.log(data);
+        	var slides = $(".am-slides").children();      
+        	for(var i=0;i<data.data.length;i++){    
+        		slides.eq(i).children().attr("href",data.data[i].url);
+        		slides.eq(i).children().children().attr("src","/"+data.data[i].pic);
+        	}
+        },  
+        error:function (data,status) { 
+    		if(status=='timeout'){
+        		alert("请求超时");
+        		ajaxTimeOut.abort();//取消请求
+        	//	window.location.href="index.jsp";
+        	}else{
+        		 alert("请求失败！");
+        	}
+        }
+	})
+	
+})
 
