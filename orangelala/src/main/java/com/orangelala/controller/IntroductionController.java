@@ -60,8 +60,9 @@ public class IntroductionController {
     @RequestMapping("/introduction/to")
     public ModelAndView TOIntroduction(@RequestParam("id") Long id){
 	ModelMap model = new ModelMap();  
-	model.put("itemId", id);
-	 return new ModelAndView("introduction",model);  
+	Map<String, Object> map = getItem(id);
+	model.put("ItemMap",map);
+	return new ModelAndView("introduction",model);  
     }
     
     /**
@@ -69,9 +70,9 @@ public class IntroductionController {
      * @param id
      * @return
      */
-    @RequestMapping("/introduction/item/get")
-    @ResponseBody
-    public RecordResult getItem(@RequestParam("id")Long id){
+    //@RequestMapping("/introduction/item/get")
+   // @ResponseBody
+    public Map<String, Object> getItem(Long id){
 	try {
 	    //获取item
 	    Item item = itemService.getItemById(id);
@@ -83,10 +84,10 @@ public class IntroductionController {
 	    map.put("item",item);
 	    map.put("itemDesc",itemDesc);
 	    map.put("itemParamItem",itemParamItem);
-	    return RecordResult.ok(map);
+	    return map;
 	} catch (Exception e) {
 	    e.printStackTrace();
-	    return RecordResult.build(400, "发生了错误");
+	    return null;
 	}	
     }
     
