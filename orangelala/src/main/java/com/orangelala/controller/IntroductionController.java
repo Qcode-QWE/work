@@ -73,7 +73,6 @@ public class IntroductionController {
     @ResponseBody
     public RecordResult getItem(Long id){
 	try {
-		int a=10/0;
 	    //获取item
 	    Item item = itemService.getItemById(id);
 	    //获取商品简介
