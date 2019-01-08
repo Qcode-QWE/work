@@ -26,7 +26,7 @@
 		<div class="clear"></div>
 				
 		<div class="login-form">
-			<form action="${pageContext.request.contextPath}/login/user.html">
+			<form action="${pageContext.request.contextPath}/login/user.html" onsubmit="return login()">
 				<div class="user-name">
 				    <label for="user"><i class="am-icon-user"></i></label>
 				    <input type="text" name="" id="user" placeholder="请输入用户名">
