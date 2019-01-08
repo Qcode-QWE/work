@@ -161,9 +161,4 @@ public class IntroductionController {
 	    return RecordResult.build(400, "发生了错误");
 	}
     }
-    
-    
-    
-    
-    
 }
