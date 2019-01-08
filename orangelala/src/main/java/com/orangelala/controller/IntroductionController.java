@@ -61,11 +61,8 @@ public class IntroductionController {
     public ModelAndView TOIntroduction(@RequestParam("id") Long id){
 	ModelMap model = new ModelMap();  
 	model.put("itemId", id);
-	 return new ModelAndView("home",model);  
+	 return new ModelAndView("introduction",model);  
     }
-    
-    
-    
     
     /**
      * @Description:根据id获取商品
