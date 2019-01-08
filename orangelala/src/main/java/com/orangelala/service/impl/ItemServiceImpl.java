@@ -63,6 +63,18 @@ public class ItemServiceImpl implements ItemService {
 	List<Item> items = itemMapper.selectByExample(example);
 	return items;
     }
+
+    /**
+     * @Description:根据id查询商品
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Item getItemById(Long id) throws Exception {
+	Item item = itemMapper.selectByPrimaryKey(id);
+	return item;
+    }
     
 
 }
