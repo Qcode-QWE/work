@@ -9,9 +9,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.orangelala.domain.RecordResult;
 import com.orangelala.pojo.Car;
@@ -54,6 +56,16 @@ public class IntroductionController {
     private ItemDescService itemDescService;
     @Autowired
     private ItemParamItemService itemParamItemService;
+    
+    @RequestMapping("/introduction/to")
+    public ModelAndView TOIntroduction(@RequestParam("id") Long id){
+	ModelMap model = new ModelMap();  
+	model.put("itemId", id);
+	 return new ModelAndView("home",model);  
+    }
+    
+    
+    
     
     /**
      * @Description:根据id获取商品
