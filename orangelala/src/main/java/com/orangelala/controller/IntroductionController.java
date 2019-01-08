@@ -73,12 +73,13 @@ public class IntroductionController {
     @ResponseBody
     public RecordResult getItem(Long id){
 	try {
+		int a=10/0;
 	    //获取item
 	    Item item = itemService.getItemById(id);
 	    //获取商品简介
 	    ItemDesc itemDesc = itemDescService.getItemDesc(item.getId());
 	    //获取商品规格
-	    ItemParamItem itemParamItem = itemParamItemService.getItemParamItem(item.getId());
+	    String itemParamItem = itemParamItemService.getItemParamItem(item.getId());
 	    Map<String, Object> map = new HashMap<String, Object>();
 	    map.put("item",item);
 	    map.put("itemDesc",itemDesc);

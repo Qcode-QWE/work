@@ -17,5 +17,5 @@ import com.orangelala.pojo.ItemParamItem;
  * @version 1.0  
  */
 public interface ItemParamItemService {
-    public ItemParamItem getItemParamItem(Long itemId) throws Exception;
+    public String getItemParamItem(Long itemId) throws Exception;
 }
