@@ -46,7 +46,7 @@
 				<a href="#" class="am-fr">忘记密码</a>
 				<br>
 				
-				<a href="${pageContext.request.contextPath}/register.jsp" class="zcnext am-fr am-btn-default">注册</a>
+				<a href="${pageContext.request.contextPath}/registerUI.html" class="zcnext am-fr am-btn-default">注册</a>
 				
          	</div>
 			<div class="am-cf">
