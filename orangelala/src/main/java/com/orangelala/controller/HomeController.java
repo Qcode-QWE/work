@@ -61,7 +61,7 @@ public class HomeController {
 	    //啊啊啊
 	    return RecordResult.ok(itemCats);
 	} catch (Exception e) {
-	    return RecordResult.build(400, "发生了错误");
+	    return RecordResult.build(400, "发生了错误");//
 	}
     }
     
