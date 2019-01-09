@@ -3,6 +3,7 @@ package com.orangelala.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -153,10 +154,9 @@ public class ItemServiceImpl implements ItemService {
     	PageHelper.startPage(pageno,12);
     	//查询条件
     	Criteria criteria = itemExample.createCriteria();
-    	if(title!="") {
+    	if(StringUtils.isNotBlank(title)) {
     		criteria.andTitleLike("%"+title+"%");
     	}
-    	System.out.println();
     	List<Item> items = itemMapper.selectByExample(itemExample);
     	return items;
     	

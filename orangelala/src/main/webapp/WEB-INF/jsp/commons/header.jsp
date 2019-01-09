@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="am-container header">
 	<ul class="message-l">
 		<div class="topMessage">
 			<div class="menu-hd">
-				<a href="#" target="_top" class="h">亲，请登录</a>
-				<a href="#" target="_top">免费注册</a>
+				<c:if test="${user==null}">
+					<a href="#" target="_top" class="h">亲，请登录</a>
+					<a href="#" target="_top">免费注册</a>
+				</c:if>
+				<c:if test="${user!=null}"> 
+					<a href="#" target="_top" class="h">${user.username}</a>
+				</c:if>
 			</div>
 		</div>
 	</ul>

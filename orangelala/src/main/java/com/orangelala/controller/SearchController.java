@@ -25,7 +25,7 @@ public class SearchController {
 	
 	@RequestMapping("/searchUI/findall")
 	@ResponseBody
-	public RecordResult findall(@RequestParam("pageno")int pageno,@RequestParam("title")String title,@RequestParam("sorttype")String sorttype) {
+	public RecordResult findall(@RequestParam(value="pageno",defaultValue="1")int pageno,String title,@RequestParam(value="sorttype",defaultValue="1")String sorttype) {
 		try {
 			List<Item> items = new ArrayList<Item>();
 			//ItemService itemService = new ItemServiceImpl();
