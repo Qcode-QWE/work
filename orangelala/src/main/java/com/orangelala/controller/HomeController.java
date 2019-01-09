@@ -1,5 +1,6 @@
 package com.orangelala.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,12 +54,14 @@ public class HomeController {
     @RequestMapping("/home/itemCat/subnav")
     @ResponseBody
     public RecordResult subnav(@RequestParam(value="id") List<Integer> ids){
-	List<ItemCat> itemCats;
+
+	List<ItemCat> itemCats = new ArrayList<ItemCat>();
 	try {
-	    itemCats = itemCatService.getItemCats(ids);
+		itemCats = itemCatService.getItemCats(ids);
+	    //啊啊啊
 	    return RecordResult.ok(itemCats);
 	} catch (Exception e) {
-	    return RecordResult.build(400, "发生了错误");
+	    return RecordResult.build(400, "发生了错误");//
 	}
     }
     
@@ -165,7 +168,8 @@ public class HomeController {
     
     /**
      * @Description:判断是否能秒杀
-     * @return
+     * @param id
+     * @return(0:还没开始,1:秒杀失败,2:秒杀成功)
      */
     @RequestMapping("/home/secondsKill/itemAble")
     @ResponseBody
@@ -179,5 +183,6 @@ public class HomeController {
    	}
        }
 
+    
     
 }
