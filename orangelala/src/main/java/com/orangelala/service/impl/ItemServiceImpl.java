@@ -76,5 +76,51 @@ public class ItemServiceImpl implements ItemService {
 	return item;
     }
     
-
+    /**
+     * @Description:查询所有商品
+     * @param pageno,title
+     * @return list
+     * @throws Exception
+     */
+    @Override
+    public List<Item> getItemByTitle(int pageno,String title) throws Exception {
+    	ItemExample itemExample = new ItemExample();
+    	//分页
+    	//PageHelper.startPage(pageno,12);
+    	//查询条件
+    	Criteria criteria = itemExample.createCriteria();
+    	if(title!="") {
+    		criteria.andTitleLike(title);
+    	}
+    	System.out.println();
+    	List<Item> items = itemMapper.selectByExample(itemExample);
+    	
+    	
+    	return items;
+    	
+    }
+    
+    /**
+     * @Description:查询所有商品且按照价格排序。
+     * @param pageno,title,sorttype
+     * @return list
+     * @throws Exception
+     */
+    @Override
+    public List<Item> getItemByTitleAndSorttype(int pageno, String title, String sorttype) throws Exception {
+    	ItemExample itemExample = new ItemExample();
+    	//分页
+    	PageHelper.startPage(pageno, 12);
+    	//查询
+    	Criteria criteria = itemExample.createCriteria();
+    	if(title!="") {
+        	criteria.andTitleLike(title);
+    	}
+    	//升序
+    	itemExample.setOrderByClause(sorttype);
+    	List<Item> items = itemMapper.selectByExample(itemExample);
+    	
+    	
+    	return items;
+    }
 }
