@@ -29,11 +29,11 @@
 				</div>
 
 			</div>
-			<div id="shopCart " class="item ">
-				<a href="# ">
+			<div id="shopCart" class="item">
+				<a href="# " id='goCar'>
 					<span class="message "></span>
 				</a>
-				<p>
+				<p >
 					购物车
 				</p>
 				<p class="cart_num ">0</p>

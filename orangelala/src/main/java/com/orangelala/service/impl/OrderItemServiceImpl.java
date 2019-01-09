@@ -35,5 +35,15 @@ public class OrderItemServiceImpl implements OrderItemService {
     public void saveOrderItem(OrdeItem ordeItem) throws Exception {
 	orderItemMapper.insert(ordeItem);
     }
+    /**
+     * @Description:
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public OrdeItem getById(Long id) throws Exception {
+	return orderItemMapper.selectByPrimaryKey(String.valueOf(id));
+    }
 
 }

@@ -39,12 +39,34 @@ public class CarItemServiceImpl implements CarItemService {
     public void saveCarItem(CarItem carItem) throws Exception {
 	carItemMapper.insert(carItem);
     }
+    
+    /**
+     * @author 澎仔
+     * @Description:根据购物车id查询购物车内的商品
+     */
 	@Override
-	public List<CarItem> getCarItems(Long id) {
+	public List<CarItem> getCarItems(Long carId) {
 		CarItemExample carItemExample =new CarItemExample();
 		Criteria criteria = carItemExample.createCriteria();
-		criteria.andCarIdEqualTo(id);
+		criteria.andCarIdEqualTo(carId);  
 		return carItemMapper.selectByExample(carItemExample);
 	}
+    /**
+     * @Description:根据购物车id和商品id查询
+     * @param uid
+     * @param cid
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public CarItem getByItemidAndCid(Long itemId, Long cid) throws Exception {
+	CarItemExample example = new CarItemExample();
+	Criteria criteria  = example.createCriteria();
+	criteria.andCarIdEqualTo(cid);
+	criteria.andItemIdEqualTo(itemId);
+	List<CarItem> carItems = carItemMapper.selectByExample(example);
+	CarItem carItem = carItems.get(0);
+	return carItem;
+    }
     
 }

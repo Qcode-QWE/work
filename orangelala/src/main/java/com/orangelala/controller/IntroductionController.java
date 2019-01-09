@@ -93,50 +93,6 @@ public class IntroductionController {
     }
     
     /**
-     * @Description:跳转到支付页面
-     * @param id
-     * @param num
-     * @return
-     */
-    public RecordResult buyItem(@RequestParam("id") Long id,@RequestParam("num") Integer num,HttpServletRequest request){
-	try {
-	    //获取商品
-	    Item item = itemService.getItemById(id);
-	    //判断商品数量是否足够
-	    if(item.getNum()<num){
-		return RecordResult.build(0, "商品数量不足");
-	    }
-	    // 创建订单-商品数据
-	    OrdeItem orderItem = new OrdeItem();
-	    // 商品id
-	    orderItem.setItemId(String.valueOf(id));
-	    // 商品数量
-	    orderItem.setNum(num);
-	    // 创建订单表
-	    Order order = new Order();
-	    // 创建时间
-	    order.setCreateTime(new Date());
-	    order.setUpdateTime(new Date());
-	    // 未付款
-	    order.setStatus(0);
-	    // 用户id
-	    HttpSession session = request.getSession();
-	    User user = (User) session.getAttribute("user");
-	    order.setUserId(user.getId());
-	    // 将订单id存到订单-商品表中
-	    orderItem.setOrderId(String.valueOf(order.getOrderId()));
-	    //保存
-	    orderService.saveOrder(order);
-	    orderItemService.saveOrderItem(orderItem);	    
-	    return RecordResult.ok(orderItem);
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    return RecordResult.build(400, "发生了错误");
-	}
-	
-    }
-    
-    /**
      * @Description:加到购物车
      * @param id
      * @param num
@@ -201,13 +157,13 @@ public class IntroductionController {
 			//获取user
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute("user");
-			Car car = carService.getCarByUserId(user.getId());
+			Car car = carService.getCarByUserId(18L);
 			//如果当前用户的购物车还没创建
 		    if(car==null) {
 		    	car = new Car();
-		    	car.setUserId(user.getId());
+		    	car.setUserId(18L);
 		    	carService.addCar(car);
-		    	car = carService.getCarByUserId(user.getId());
+		    	car = carService.getCarByUserId(18L);
 		    }
 		    Long carId=car.getCarId();
 			List<CarItem> carItems = carItemService.getCarItems(carId);
@@ -228,4 +184,5 @@ public class IntroductionController {
 		    return RecordResult.build(400, "发生了错误");
 		}
 	}
+
 }
