@@ -18,4 +18,5 @@ import com.orangelala.pojo.Car;
  */
 public interface CarService {
     public Car getCarByUserId(Long uid) throws Exception;
+    public void addCar(Car car) throws Exception; 
 }

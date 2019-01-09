@@ -1,7 +1,9 @@
 package com.orangelala.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -156,6 +158,12 @@ public class IntroductionController {
 	    User user = (User) session.getAttribute("user");
 	    //查询购物车
 	    Car car = carService.getCarByUserId(user.getId());
+	    if(car==null) {                  //
+	    	car = new Car();
+	    	car.setUserId(user.getId());
+	    	carService.addCar(car);
+	    	car = carService.getCarByUserId(user.getId());
+	    }
 	    //创建购物车-商品表
 	    CarItem carItem = new CarItem();
 	    carItem.setCarId(car.getCarId());
@@ -170,4 +178,54 @@ public class IntroductionController {
 	    return RecordResult.build(400, "发生了错误");
 	}
     }
+    
+    /**
+     * 跳转到购物车页面
+     * @return
+     */
+    @RequestMapping("/goCar")
+    public String goCar() {
+		return "shopcar";
+	}
+    
+    
+    /**
+     * 显示购物车
+     * @param request
+     * @return
+     */
+    @RequestMapping("/showCar")
+    @ResponseBody  
+    public RecordResult showCar(HttpServletRequest request) {
+    	try {
+			//获取user
+			HttpSession session = request.getSession();
+			User user = (User) session.getAttribute("user");
+			Car car = carService.getCarByUserId(user.getId());
+			//如果当前用户的购物车还没创建
+		    if(car==null) {
+		    	car = new Car();
+		    	car.setUserId(user.getId());
+		    	carService.addCar(car);
+		    	car = carService.getCarByUserId(user.getId());
+		    }
+		    Long carId=car.getCarId();
+			List<CarItem> carItems = carItemService.getCarItems(carId);
+			List<Item> items = new ArrayList<>();
+			for (CarItem carItem : carItems) {
+				items.add(itemService.getItemById(carItem.getItemId()));
+			}
+			Map<String, Object> map = new HashMap<>();
+			map.put("catItems", carItems);
+			map.put("items", items);
+			if(carItems==null) {
+				return RecordResult.ok();
+			}else {
+				return RecordResult.ok(map);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		    return RecordResult.build(400, "发生了错误");
+		}
+	}
 }

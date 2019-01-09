@@ -7,6 +7,7 @@
 */  
 package com.orangelala.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,12 @@ public class CarServiceImpl implements CarService {
 	}
 	return car;
     }
+
+	@Override
+	public void addCar(Car car) throws Exception {
+		car.setCreated(new Date());
+		car.setUpdated(new Date());
+		carMapper.insert(car);
+	}
 
 }

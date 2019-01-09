@@ -7,6 +7,8 @@
 */  
 package com.orangelala.service;
 
+import java.util.List;
+
 import com.orangelala.pojo.CarItem;
 
 /**  
@@ -18,4 +20,6 @@ import com.orangelala.pojo.CarItem;
  */
 public interface CarItemService {
     public void saveCarItem(CarItem carItem) throws Exception;
+
+	public List<CarItem> getCarItems(Long id);
 }

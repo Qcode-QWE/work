@@ -18,6 +18,7 @@
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/home.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/commons.js"></script>
 		<script language="javascript" type="text/javascript">  
 			var timer = null;
 			window.onload = function(){
@@ -32,7 +33,7 @@
 					var differMs = d2Ms-d1Ms;//相差的毫秒数
 					if(differMs<0){
 						return;
-					}
+					}  
 					var date = parseInt(differMs/(3600*24*1000));//天
 					var hours = parseInt((differMs%(3600*24*1000))/(3600*1000));//1小时=3600s
 					var minutes =parseInt((differMs%(3600*1000))/(60*1000));//分钟
@@ -2333,31 +2334,8 @@
 					</div>
                  <div class="clear "></div>                 
             </div>               
-            
-            
-            
-					<div class="footer ">
-						<div class="footer-hd ">
-							<p>
-								<a href="# ">恒望科技</a>
-								<b>|</b>
-								<a href="# ">商城首页</a>
-								<b>|</b>
-								<a href="# ">支付宝</a>
-								<b>|</b>
-								<a href="# ">物流</a>
-							</p>
-						</div>
-						<div class="footer-bd ">
-							<p>
-								<a href="# ">关于恒望</a>
-								<a href="# ">合作伙伴</a>
-								<a href="# ">联系我们</a>
-								<a href="# ">网站地图</a>
-								<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
-							</p>
-						</div>
-					</div>
+            	<!--引导页脚 -->
+				<jsp:include page="commons/footer.jsp"></jsp:include>  
 				</div>
 			</div>
 		</div>

@@ -25,15 +25,12 @@ $("document").ready(function(){
 		        		var item = d['item'];
 		        		var itemDesc = d['itemDesc'];
 		        		var itemParamItem = d['itemParamItem'];
-		        		console.log(item);
-		        		console.log(itemDesc);
-		        		console.log(itemParamItem);
 		        		//标题
 		        		var title = $("#item-title");
 		        		title.html("<h1>"+item['title']+"</h1>")
 		        		//卖点
 		        		var gold_list = $("#gold-list");
-		        		gold_list.html('<p>'+item['sellP	oint']+'</p>');
+		        		gold_list.html('<p>'+item['sellPoint']+'</p>');
 		        		//价格
 		        		var sys_item_price = $("#sys_item_price");
 		        		sys_item_price.html(item['price']/100);
@@ -45,7 +42,7 @@ $("document").ready(function(){
 		        		//图片
 		        		var slides_img = $("#thumbMax");
 		        		//console.log(item['image']);
-		        		slides_img.html('<a href="../images/01.jpg"><img src="'+item['image']+'" alt="细节展示放大镜特效" rel="'+item['image']+'" class="jqzoom" /></a>');
+		        		slides_img.html('<a href="../images/01.jpg"><img src="../images/loading.gif" style="width:300px"/</a>');      
 		        		
 		        		//商品介绍
 		        		var twlistNews = $("#twlistNews");
@@ -78,4 +75,49 @@ $("document").ready(function(){
 		        }
 			}
 		);
+
+	/**
+	 * 添加到购物车
+	 */
+	$("#LikBasket").click(function(){
+		var url = "item/car.html";
+		var itemId=$("#itemId").val();  //<input id="itemId" value="${ItemId }" hidden="true"/>
+		var num = $("#text_box").val();
+		var data={"id":itemId,"num":num};
+		alert(itemId+"   "+num);
+		$.ajax(
+			{
+				type: "post",
+				timeout : 5000,    //设置超时时间5秒钟
+		        url: url,    
+		        data: data,
+		        traditional: true,
+		        cache: false,
+		        async : true,    //async必须设置为async:true，timeout才生效；如果设置为async:false，则锁住浏览器，禁止一切操作，直到请求有返回结果。
+		        dataType: "json",
+		        success: function (data)
+		        {
+		        	if(data.status==200){
+		        		alert("添加成功！");
+		        	}else{
+		        		//载入缓存失败图片
+//		        		var div = $(".ml-22");
+//		        		div.empty();
+//		        		div.append('<img src="images/loading.gif" style="width:20px"/>');
+		        	}
+		        },  
+		        error:function (data,status) { 
+	        		if(status=='timeout'){
+		        		alert("请求超时");  
+		        		ajaxTimeOut.abort();//取消请求
+		        	//	window.location.href="index.jsp";
+		        	}else{
+		        		 alert("请求失败！");
+		        	}
+		        }
+			}
+		);
+	})
 })
+
+

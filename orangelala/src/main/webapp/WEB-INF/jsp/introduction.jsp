@@ -24,6 +24,7 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/list.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/introduction.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/commons.js"></script>
 		
 		<%--  <script class="resources library" src="${pageContext.request.contextPath}/js/area.js" type="text/javascript"></script>
     	 <script type="text/javascript">_init_area();</script> --%>
@@ -181,8 +182,14 @@
 	          </h1>
 						</div>
 						<div class="tb-detail-list">
+						     <div class="hot">
+									<dt class="tb-metatit">店铺热点</dt>
+									<div class="gold-list" id="gold-list">
+									</div>
+							</div>                            
 							<!--价格-->
 							<div class="tb-detail-price">
+								
 								<li class="price iteminfo_price">
 									<dt>促销价</dt>
 									<dd><em>¥</em><b class="sys_item_price" id="sys_item_price">56.90</b>  </dd>                                 
@@ -211,9 +218,9 @@
 											<option value="a">瑞安区</option>
 											<option value="b">洪山区</option>
 										</select>
-										
+										  
 									</div> -->
-									<div class="info">
+									 <div class="info">
 										<div>
 											<select id="s_province" name="s_province"></select>  
 										    <select id="s_city" name="s_city" ></select>  
@@ -231,10 +238,10 @@
 												$('#s_county').val() + "</h3>");
 											}  
 											})
-									</script>
+									</script>      
 									<!-- <div class="pay-logis">
 										快递<b class="sys_item_freprice">10</b>元
-									</div> -->
+									</div>  -->
 									<div id="show"></div>
 								</div>
 							</dl>
@@ -325,12 +332,11 @@
 							<div class="clear"></div>
 							<!--活动	-->
 							<div class="shopPromotion gold">
-								<div class="hot">
+								<!-- <div class="hot">
 									<dt class="tb-metatit">店铺热点</dt>
 									<div class="gold-list" id="gold-list">
-										<!-- <p>购物满2件打8折，满3件7折<span>点击领券<i class="am-icon-sort-down"></i></span></p> -->
 									</div>
-								</div>
+								</div> -->
 								<div class="clear"></div>
 								<div class="coupon">
 									<dt class="tb-metatit">优惠券</dt>
@@ -1197,165 +1203,8 @@
 
 				</div>
 			</div>
-			<!--菜单 -->
-			<div class=tip>
-				<div id="sidebar">
-					<div id="wrap">
-						<div id="prof" class="item">
-							<a href="#">
-								<span class="setting"></span>
-							</a>
-							<div class="ibar_login_box status_login">
-								<div class="avatar_box">
-									<p class="avatar_imgbox"><img src="../images/no-img_mid_.jpg" /></p>
-									<ul class="user_info">
-										<li>用户名：sl1903</li>
-										<li>级&nbsp;别：普通会员</li>
-									</ul>
-								</div>
-								<div class="login_btnbox">
-									<a href="#" class="login_order">我的订单</a>
-									<a href="#" class="login_favorite">我的收藏</a>
-								</div>
-								<i class="icon_arrow_white"></i>
-							</div>
-
-						</div>
-						<div id="shopCart" class="item">
-							<a href="#">
-								<span class="message"></span>
-							</a>
-							<p>
-								购物车
-							</p>
-							<p class="cart_num">0</p>
-						</div>
-						<div id="asset" class="item">
-							<a href="#">
-								<span class="view"></span>
-							</a>
-							<div class="mp_tooltip">
-								我的资产
-								<i class="icon_arrow_right_black"></i>
-							</div>
-						</div>
-
-						<div id="foot" class="item">
-							<a href="#">
-								<span class="zuji"></span>
-							</a>
-							<div class="mp_tooltip">
-								我的足迹
-								<i class="icon_arrow_right_black"></i>
-							</div>
-						</div>
-
-						<div id="brand" class="item">
-							<a href="#">
-								<span class="wdsc"><img src="../images/wdsc.png" /></span>
-							</a>
-							<div class="mp_tooltip">
-								我的收藏
-								<i class="icon_arrow_right_black"></i>
-							</div>
-						</div>
-
-						<div id="broadcast" class="item">
-							<a href="#">
-								<span class="chongzhi"><img src="../images/chongzhi.png" /></span>
-							</a>
-							<div class="mp_tooltip">
-								我要充值
-								<i class="icon_arrow_right_black"></i>
-							</div>
-						</div>
-
-						<div class="quick_toggle">
-							<li class="qtitem">
-								<a href="#"><span class="kfzx"></span></a>
-								<div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
-							</li>
-							<!--二维码 -->
-							<li class="qtitem">
-								<a href="#none"><span class="mpbtn_qrcode"></span></a>
-								<div class="mp_qrcode" style="display:none;"><img src="../images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
-							</li>
-							<li class="qtitem">
-								<a href="#top" class="return_top"><span class="top"></span></a>
-							</li>
-						</div>
-
-						<!--回到顶部 -->
-						<div id="quick_links_pop" class="quick_links_pop hide"></div>
-
-					</div>
-
-				</div>
-				<div id="prof-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						我
-					</div>
-				</div>
-				<div id="shopCart-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						购物车
-					</div>
-				</div>
-				<div id="asset-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						资产
-					</div>
-
-					<div class="ia-head-list">
-						<a href="#" target="_blank" class="pl">
-							<div class="num">0</div>
-							<div class="text">优惠券</div>
-						</a>
-						<a href="#" target="_blank" class="pl">
-							<div class="num">0</div>
-							<div class="text">红包</div>
-						</a>
-						<a href="#" target="_blank" class="pl money">
-							<div class="num">￥0</div>
-							<div class="text">余额</div>
-						</a>
-					</div>
-
-				</div>
-				<div id="foot-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						足迹
-					</div>
-				</div>
-				<div id="brand-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						收藏
-					</div>
-				</div>
-				<div id="broadcast-content" class="nav-content">
-					<div class="nav-con-close">
-						<i class="am-icon-angle-right am-icon-fw"></i>
-					</div>
-					<div>
-						充值
-					</div>
-				</div>
-			</div>
+			<!--引导 -->
+		<jsp:include page="commons/right.jsp"></jsp:include>
 
 	</body>
 
