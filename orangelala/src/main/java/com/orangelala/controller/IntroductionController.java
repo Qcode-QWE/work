@@ -60,12 +60,9 @@ public class IntroductionController {
     @RequestMapping("/introduction/to")
     public ModelAndView TOIntroduction(@RequestParam("id") Long id){
 	ModelMap model = new ModelMap();  
-	model.put("itemId", id);
-	 return new ModelAndView("home",model);  
+	model.put("ItemId",id);
+	return new ModelAndView("introduction",model);  
     }
-    
-    
-    
     
     /**
      * @Description:根据id获取商品
@@ -74,7 +71,7 @@ public class IntroductionController {
      */
     @RequestMapping("/introduction/item/get")
     @ResponseBody
-    public RecordResult getItem(@RequestParam("id")Long id){
+    public RecordResult getItem(Long id){
 	try {
 	    //获取item
 	    Item item = itemService.getItemById(id);
@@ -91,50 +88,6 @@ public class IntroductionController {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");
 	}	
-    }
-    
-    /**
-     * @Description:跳转到支付页面
-     * @param id
-     * @param num
-     * @return
-     */
-    public RecordResult buyItem(@RequestParam("id") Long id,@RequestParam("num") Integer num,HttpServletRequest request){
-	try {
-	    //获取商品
-	    Item item = itemService.getItemById(id);
-	    //判断商品数量是否足够
-	    if(item.getNum()<num){
-		return RecordResult.build(0, "商品数量不足");
-	    }
-	    // 创建订单-商品数据
-	    OrdeItem orderItem = new OrdeItem();
-	    // 商品id
-	    orderItem.setItemId(String.valueOf(id));
-	    // 商品数量
-	    orderItem.setNum(num);
-	    // 创建订单表
-	    Order order = new Order();
-	    // 创建时间
-	    order.setCreateTime(new Date());
-	    order.setUpdateTime(new Date());
-	    // 未付款
-	    order.setStatus(0);
-	    // 用户id
-	    HttpSession session = request.getSession();
-	    User user = (User) session.getAttribute("user");
-	    order.setUserId(user.getId());
-	    // 将订单id存到订单-商品表中
-	    orderItem.setOrderId(String.valueOf(order.getOrderId()));
-	    //保存
-	    orderService.saveOrder(order);
-	    orderItemService.saveOrderItem(orderItem);	    
-	    return RecordResult.ok(orderItem);
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    return RecordResult.build(400, "发生了错误");
-	}
-	
     }
     
     /**
@@ -172,5 +125,8 @@ public class IntroductionController {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");
 	}
+    }
+    public static void main(String[] args) {
+	System.out.println(new Date().getTime());
     }
 }

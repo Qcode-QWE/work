@@ -18,4 +18,5 @@ import com.orangelala.pojo.CarItem;
  */
 public interface CarItemService {
     public void saveCarItem(CarItem carItem) throws Exception;
+    public CarItem getByItemidAndCid(Long Itemid,Long cid) throws Exception;
 }

@@ -18,4 +18,6 @@ import com.orangelala.pojo.Order;
  */
 public interface OrderService {
     public void saveOrder(Order order) throws Exception;
+    public Order getOrderById(String id) throws Exception;
+    public void updateOrder(Order order) throws Exception;
 }
