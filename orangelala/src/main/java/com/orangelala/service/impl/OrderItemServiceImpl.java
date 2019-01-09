@@ -7,11 +7,15 @@
 */  
 package com.orangelala.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orangelala.mapper.OrdeItemMapper;
 import com.orangelala.pojo.OrdeItem;
+import com.orangelala.pojo.OrdeItemExample;
+import com.orangelala.pojo.OrdeItemExample.Criteria;
 import com.orangelala.service.OrderItemService;
 
 /**  
@@ -44,6 +48,20 @@ public class OrderItemServiceImpl implements OrderItemService {
     @Override
     public OrdeItem getById(Long id) throws Exception {
 	return orderItemMapper.selectByPrimaryKey(String.valueOf(id));
+    }
+    /**
+     * @Description:根据orderId查询list
+     * @param orderId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<OrdeItem> getByOrderId(String orderId) throws Exception {
+	OrdeItemExample example = new OrdeItemExample();
+	Criteria criteria = example.createCriteria();
+	criteria.andOrderIdEqualTo(orderId);
+	List<OrdeItem> orderItems = orderItemMapper.selectByExample(example);
+	return orderItems;
     }
 
 }

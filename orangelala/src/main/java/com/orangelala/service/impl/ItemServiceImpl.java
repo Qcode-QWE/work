@@ -90,6 +90,16 @@ public class ItemServiceImpl implements ItemService {
 	List<Item> items = itemMapper.selectByExample(example);
 	return items;
     }
+
+    /**
+     * @Description:
+     * @param item
+     * @throws Exception
+     */
+    @Override
+    public void updateItem(Item item) throws Exception {
+	itemMapper.updateByPrimaryKey(item);
+    }
     
 
 }

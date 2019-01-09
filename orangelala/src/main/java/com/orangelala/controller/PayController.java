@@ -216,6 +216,17 @@ public class PayController {
 	    order.setBuyerMessage(msg);
 	    //
 	    orderService.updateOrder(order);
+	    //根据orderId获取order-item
+	    List<OrdeItem> orderItems = orderItemService.getByOrderId(orderId);
+	    for(OrdeItem orderItem:orderItems){
+		Item item = itemService.getItemById(Long.valueOf(orderItem.getItemId()));
+		//修改商品的数量
+		int num = item.getNum();
+		int num1 = orderItem.getNum();
+		item.setNum(num-num1);
+		item.setUpdated(new Date());
+		itemService.updateItem(item);
+	    }
 	    return new ModelAndView("success");
 	} catch (Exception e) {
 	    // TODO 自动生成的 catch 块
