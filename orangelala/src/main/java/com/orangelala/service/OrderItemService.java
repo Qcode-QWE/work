@@ -18,4 +18,5 @@ import com.orangelala.pojo.OrdeItem;
  */
 public interface OrderItemService {
     public void saveOrderItem(OrdeItem ordeItem) throws Exception;
+    public OrdeItem getById(Long id) throws Exception;
 }

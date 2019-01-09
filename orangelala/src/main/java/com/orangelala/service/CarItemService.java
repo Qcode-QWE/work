@@ -20,6 +20,11 @@ import com.orangelala.pojo.CarItem;
  */
 public interface CarItemService {
     public void saveCarItem(CarItem carItem) throws Exception;
-
-	public List<CarItem> getCarItems(Long id);
+    /**
+     * 根据购物车id查询购物车内的商品
+     * @param carId
+     * @return
+     */
+	public List<CarItem> getCarItems(Long carId);
+    public CarItem getByItemidAndCid(Long Itemid,Long cid) throws Exception;
 }
