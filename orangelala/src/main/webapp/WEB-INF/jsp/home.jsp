@@ -27,8 +27,9 @@
 				function show(){
 					var d1 = new Date();//获取到当前的时间
 					var d1Ms = d1.getTime();
-					var d2 = new Date(2019,0,8,15,53,0);
-					var d2Ms = d2.getTime();
+					//var d2 = new Date(2019,0,8,15,53,0);
+					//var d2Ms = d2.getTime()+900000;
+					var d2Ms = d1Ms+900000;
 					var differMs = d2Ms-d1Ms;//相差的毫秒数
 					if(differMs<0){
 						return;
