@@ -111,5 +111,73 @@ public class HomeController {
 	}
     }
     
+    /**
+     * @Description:广告列表
+     * @param id
+     * @return
+     */
+    @RequestMapping("/home/content/minAD")
+    @ResponseBody
+    public RecordResult minAD(@RequestParam("id") Long id){
+	try {
+	    List<Content> contents = contentService.getContentByCategoryId(id);
+	    return RecordResult.ok(contents);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
+    /**
+     * @Description:根据id查询7篇文章
+     * @param id
+     * @return
+     */
+    @RequestMapping("/home/content/news")
+    @ResponseBody
+    public RecordResult news(@RequestParam("id") Long id){
+	try {
+	    List<Content> contents = contentService.getContentByCategoryIdOrderBy(id);
+	    return RecordResult.ok(contents);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    
+    /**
+     * @Description:返回四个秒杀商品id
+     * @return
+     */
+    @RequestMapping("/home/secondsKill/items")
+    @ResponseBody
+    public RecordResult secondsKill(){
+	try {
+	    List<Item> items = itemService.getKillItem();
+	    return RecordResult.ok(items);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+	}
+    }
+    
+    /**
+     * @Description:判断是否能秒杀
+     * @return
+     */
+    @RequestMapping("/home/secondsKill/itemAble")
+    @ResponseBody
+    public RecordResult secondsKillAble(@RequestParam("id") Long id){
+   	try {
+   	   int i = itemService.updateKillItem(id);
+   	   return RecordResult.ok(i);
+   	} catch (Exception e) {
+   	    e.printStackTrace();
+	    return RecordResult.build(400, "发生了错误");
+   	}
+       }
+
     
 }
