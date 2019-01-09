@@ -7,15 +7,15 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <title>Home</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-<script src="/js/preloader.js"></script> 
-<link rel="stylesheet" href="/css/style-error.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/preloader.js"></script> 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style-error.css">
 <link href='http://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/js/css_browser_selector.js"></script>
- <script type="text/javascript" src="/js/plax.js"></script>
-<script type="text/javascript" src="/js/jquery.spritely-0.6.1.js"></script>
-<script type="text/javascript" src="/js/jquery-animate-css-rotate-scale.js"></script>
-<script type="text/javascript" src="/js/script-error.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/css_browser_selector.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/js/plax.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.spritely-0.6.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-animate-css-rotate-scale.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/script-error.js"></script>
 </head>
 <body >
 <div id="indicator"></div>

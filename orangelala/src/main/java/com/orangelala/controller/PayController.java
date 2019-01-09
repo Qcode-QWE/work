@@ -43,7 +43,7 @@ import com.orangelala.utils.JsonUtils;
  * @version 1.0  
  */
 @Controller
-@RequestMapping("/pay")
+//@RequestMapping("/pay")
 public class PayController {
     @Autowired
     private OrderItemService orderItemService;
