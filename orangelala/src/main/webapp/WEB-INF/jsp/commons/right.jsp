@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="navCir">
 	<li class="active"><a href="home2.html"><i class="am-icon-home "></i>首页</a></li>
 	<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
@@ -17,8 +18,14 @@
 					<div class="avatar_box ">
 						<p class="avatar_imgbox "><img src="${pageContext.request.contextPath}/images/no-img_mid_.jpg " /></p>
 						<ul class="user_info ">
-							<li>用户名：sl1903</li>
-							<li>级&nbsp;别：普通会员</li>
+							<c:if test="${user!=null}">
+								<li>用户名：${user.username}</li>
+								<li>级&nbsp;别：普通会员</li>
+							</c:if>
+							<c:if test="${user==null}">
+								<li>用户名：???</li>
+								<li>级&nbsp;别：普通会员</li>
+							</c:if>
 						</ul>
 					</div>
 					<div class="login_btnbox ">
