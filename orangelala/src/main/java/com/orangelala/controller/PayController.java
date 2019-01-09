@@ -33,6 +33,7 @@ import com.orangelala.service.CarService;
 import com.orangelala.service.ItemService;
 import com.orangelala.service.OrderItemService;
 import com.orangelala.service.OrderService;
+import com.orangelala.utils.JsonUtils;
 
 /**  
  * <p>Title: PayController.java</p>  
@@ -132,11 +133,12 @@ public class PayController {
      * @return
      */
     @RequestMapping("/carToPay")
-    public ModelAndView carToPay(List<Long> ids,List<Integer> nums,HttpServletRequest request){
+    public ModelAndView carToPay(@RequestParam("ids")String ids,@RequestParam(value="nums",defaultValue="[0]")String numlist,HttpServletRequest request){
 	try {
-	    
+	    List<Long> idlList = JsonUtils.jsonToList(ids, Long.class);
+	    List<Integer> nums = JsonUtils.jsonToList(numlist, Integer.class);
 	    //根据商品id查询商品
-	    List<Item> items = itemService.getItmesById(ids);
+	    List<Item> items = itemService.getItmesById(idlList);
 	    //生成一个订单对象
 	    Order order = new Order();
 	    order.setOrderId(String.valueOf(new Date().getTime()));
@@ -186,7 +188,6 @@ public class PayController {
 	    modelMap.put("order", order);
 	    return new ModelAndView("pay",modelMap);
 	} catch (Exception e) {
-	    
 	    e.printStackTrace();
 	    return new ModelAndView("error/error");
 	}
