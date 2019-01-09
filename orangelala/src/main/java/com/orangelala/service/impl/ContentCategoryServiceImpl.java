@@ -1,5 +1,7 @@
 package com.orangelala.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.orangelala.service.ContentCategoryService;
 
 /**  
@@ -8,7 +10,8 @@ import com.orangelala.service.ContentCategoryService;
 * @author QEcode  
 * @date 2019年1月7日  
 * @version 1.0  
-*/ 
+*/
+@Service
 public class ContentCategoryServiceImpl implements ContentCategoryService {
     
 }

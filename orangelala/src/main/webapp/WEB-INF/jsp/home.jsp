@@ -18,6 +18,38 @@
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/home.js"></script>
+		<script language="javascript" type="text/javascript">  
+			var timer = null;
+			window.onload = function(){
+				//开启定时器
+				timer = setInterval(show,1000);
+				//回调函数
+				function show(){
+					var d1 = new Date();//获取到当前的时间
+					var d1Ms = d1.getTime();
+					var d2 = new Date(2019,0,8,15,53,0);
+					var d2Ms = d2.getTime();
+					var differMs = d2Ms-d1Ms;//相差的毫秒数
+					if(differMs<0){
+						return;
+					}
+					var date = parseInt(differMs/(3600*24*1000));//天
+					var hours = parseInt((differMs%(3600*24*1000))/(3600*1000));//1小时=3600s
+					var minutes =parseInt((differMs%(3600*1000))/(60*1000));//分钟
+					var seconds = parseInt((differMs%(60*1000))/1000);//秒
+					console.log(seconds);
+					//var ms = differMs%1000;//毫秒
+					//当前分秒为个位数字时，对其进行的处理
+					hours = hours<10?"0"+hours:hours;
+					minutes = minutes<10?"0"+minutes:minutes;
+					seconds = seconds<10?"0"+seconds:seconds;
+					document.getElementById("countdown").innerHTML ='<span class="hh">'+hours+'</span>'+
+																	'<span class="mm">'+minutes+'</span>'+
+																	'<span class="ss">'+seconds+'</span>';
+				}	
+			}
+		</script>
+
 	</head>
 
 	<body>
@@ -26,20 +58,9 @@
 				<jsp:include page="commons/header.jsp"></jsp:include>
 
 				<!--悬浮搜索框-->
-				<div class="nav white">
-					<div class="logo"><img src="${pageContext.request.contextPath}/images/logo.png" /></div>
-					<div class="logoBig">
-						<li><img src="${pageContext.request.contextPath}/images/logobig.png" /></li>
-					</div>
 
-					<div class="search-bar pr">
-						<a name="index_none_header_sysc" href="#"></a>
-						<form>
-							<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-						</form>
-					</div>
-				</div>
+
+				<jsp:include page="commons/search.jsp"></jsp:include>
 
 				<div class="clear"></div>
 			</div>
@@ -870,9 +891,9 @@
 		                   <i></i>
 		                   <em class="sale-title">限时秒杀</em>
 		                   <div class="s-time" id="countdown">
-			                    <span class="hh">01</span>
-			                    <span class="mm">20</span>
-			                    <span class="ss">59</span>
+			                    <span class="hh">00</span>
+			                    <span class="mm">00</span>
+			                    <span class="ss">00</span>
 		                   </div>
 	                  </div>
 
@@ -2344,7 +2365,7 @@
 		</div>
 		<!--引导 -->
 		<jsp:include page="commons/right.jsp"></jsp:include>
-		<!--菜单 -->
+
 		
 		<script>
 			window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
