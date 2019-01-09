@@ -79,20 +79,18 @@ public class ItemServiceImpl implements ItemService {
     /**
      * @Description:查询所有商品
      * @param pageno,title
-     * @return list
+     * @return 商品list
      * @throws Exception
      */
     @Override
     public List<Item> getItemByTitle(int pageno,String title) throws Exception {
     	ItemExample itemExample = new ItemExample();
     	//分页
-    	//PageHelper.startPage(pageno,12);
+    	PageHelper.startPage(pageno,12);
     	//查询条件
     	Criteria criteria = itemExample.createCriteria();
-    	if(title!="") {
-    		criteria.andTitleLike(title);
-    	}
-    	System.out.println();
+		criteria.andTitleLike("%"+title+"%");
+
     	List<Item> items = itemMapper.selectByExample(itemExample);
     	
     	
@@ -103,7 +101,7 @@ public class ItemServiceImpl implements ItemService {
     /**
      * @Description:查询所有商品且按照价格排序。
      * @param pageno,title,sorttype
-     * @return list
+     * @return 商品list
      * @throws Exception
      */
     @Override
@@ -111,13 +109,12 @@ public class ItemServiceImpl implements ItemService {
     	ItemExample itemExample = new ItemExample();
     	//分页
     	PageHelper.startPage(pageno, 12);
+    	//升序
+    	System.out.println(sorttype);
+    	itemExample.setOrderByClause(sorttype);
     	//查询
     	Criteria criteria = itemExample.createCriteria();
-    	if(title!="") {
-        	criteria.andTitleLike(title);
-    	}
-    	//升序
-    	itemExample.setOrderByClause(sorttype);
+    	criteria.andTitleLike("%"+title+"%");
     	List<Item> items = itemMapper.selectByExample(itemExample);
     	
     	
