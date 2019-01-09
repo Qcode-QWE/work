@@ -3,6 +3,7 @@ package com.orangelala.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,8 @@ import com.orangelala.service.impl.ItemServiceImpl;
 
 @Controller
 public class SearchController {
+    	@Autowired
+    	ItemService itemService ;
 	@RequestMapping("/searchUI")
 	public String searchUI() {
 		return "search";
@@ -25,7 +28,7 @@ public class SearchController {
 	public RecordResult findall(@RequestParam("pageno")int pageno,@RequestParam("title")String title,@RequestParam("sorttype")String sorttype) {
 		try {
 			List<Item> items = new ArrayList<Item>();
-			ItemService itemService = new ItemServiceImpl();
+			//ItemService itemService = new ItemServiceImpl();
 			if(sorttype == "price") {
 				items =  itemService.getItemByTitleAndSorttype(pageno, title, sorttype);
 			}
