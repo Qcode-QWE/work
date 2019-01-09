@@ -75,6 +75,21 @@ public class ItemServiceImpl implements ItemService {
 	Item item = itemMapper.selectByPrimaryKey(id);
 	return item;
     }
+
+    /**
+     * @Description:根据id列表获取多个商品
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Item> getItmesById(List<Long> ids) throws Exception {
+	ItemExample example = new ItemExample();
+	Criteria criteria = example.createCriteria();
+	criteria.andIdIn(ids);
+	List<Item> items = itemMapper.selectByExample(example);
+	return items;
+    }
     
 
 }

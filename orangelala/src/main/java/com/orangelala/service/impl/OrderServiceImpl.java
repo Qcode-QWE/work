@@ -35,5 +35,25 @@ public class OrderServiceImpl implements OrderService {
     public void saveOrder(Order order) throws Exception {
 	orderMapper.insert(order);
     }
+    /**
+     * @Description:
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Order getOrderById(String id) throws Exception {
+	
+	return orderMapper.selectByPrimaryKey(id);
+    }
+    /**
+     * @Description:
+     * @param order
+     * @throws Exception
+     */
+    @Override
+    public void updateOrder(Order order) throws Exception {
+	orderMapper.updateByPrimaryKey(order);
+    }
 
 }

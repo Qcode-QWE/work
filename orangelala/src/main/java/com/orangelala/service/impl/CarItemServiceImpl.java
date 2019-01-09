@@ -7,11 +7,15 @@
 */  
 package com.orangelala.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orangelala.mapper.CarItemMapper;
 import com.orangelala.pojo.CarItem;
+import com.orangelala.pojo.CarItemExample;
+import com.orangelala.pojo.CarItemExample.Criteria;
 import com.orangelala.service.CarItemService;
 
 /**  
@@ -34,6 +38,23 @@ public class CarItemServiceImpl implements CarItemService {
     @Override
     public void saveCarItem(CarItem carItem) throws Exception {
 	carItemMapper.insert(carItem);
+    }
+    /**
+     * @Description:根据购物车id和商品id查询
+     * @param uid
+     * @param cid
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public CarItem getByItemidAndCid(Long itemId, Long cid) throws Exception {
+	CarItemExample example = new CarItemExample();
+	Criteria criteria  = example.createCriteria();
+	criteria.andCarIdEqualTo(cid);
+	criteria.andItemIdEqualTo(itemId);
+	List<CarItem> carItems = carItemMapper.selectByExample(example);
+	CarItem carItem = carItems.get(0);
+	return carItem;
     }
     
 }
