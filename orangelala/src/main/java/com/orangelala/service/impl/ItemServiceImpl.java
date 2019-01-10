@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import redis.clients.jedis.Jedis;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.orangelala.mapper.ItemMapper;
 import com.orangelala.pojo.Item;
 import com.orangelala.pojo.ItemCat;
@@ -156,14 +158,26 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public List<Item> getItemByTitle(int pageno,String title) throws Exception {
     	ItemExample itemExample = new ItemExample();
-    	//分页
-    	PageHelper.startPage(pageno,12);
+    	PageHelper.startPage(1,12);
     	//查询条件
     	Criteria criteria = itemExample.createCriteria();
     	if(StringUtils.isNotBlank(title)) {
     		criteria.andTitleLike("%"+title+"%");
     	}
     	List<Item> items = itemMapper.selectByExample(itemExample);
+    	PageInfo<Item> info=new PageInfo<>(items,5);
+    	
+    	//正式开始查询
+    	//分页
+    	//查询最后一页
+    	if(pageno==-1) {
+    		PageHelper.startPage(info.getPages(),12);
+    	}else {
+    		PageHelper.startPage(pageno,12);
+    	}
+    	
+    	items = itemMapper.selectByExample(itemExample);
+    	info=new PageInfo<>(items,5);
     	return items;
     	
     }
@@ -191,4 +205,34 @@ public class ItemServiceImpl implements ItemService {
     	
     	return items;
     }
+    
+    
+  //获取页面导航栏的页号顺序
+	@Override
+	public int[] getPagesByTitle(int pageno, String title) {
+		ItemExample itemExample = new ItemExample();
+    	//分页
+    	PageHelper.startPage(1,12);  
+    	//查询条件  
+    	Criteria criteria = itemExample.createCriteria();
+    	if(StringUtils.isNotBlank(title)) {
+    		criteria.andTitleLike("%"+title+"%");
+    	}
+    	List<Item> items = itemMapper.selectByExample(itemExample);
+    	PageInfo<Item> info=new PageInfo<>(items,5);
+    	
+    	//正式开始查询
+    	//分页
+    	if(pageno==-1) {
+    		//查询最后一页
+    		PageHelper.startPage(info.getPages(),12);
+    	}else {
+    		PageHelper.startPage(pageno,12);
+    	}
+    	items = itemMapper.selectByExample(itemExample);
+    	info=new PageInfo<>(items,5);
+    	int[] pages = info.getNavigatepageNums();
+		// TODO Auto-generated method stub
+		return pages;
+	}
 }

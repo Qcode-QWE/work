@@ -1,6 +1,7 @@
 package com.orangelala.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,12 +34,17 @@ public class SearchController {
 			List<Item> items = new ArrayList<Item>();
 			//ItemService itemService = new ItemServiceImpl();
 			if(sorttype == "price") {
+				//查找最后一页
 				items =  itemService.getItemByTitleAndSorttype(pageno, title, sorttype);
 			}
 			else {
 				items = itemService.getItemByTitle(pageno, title);
 			}
-			return RecordResult.ok(items);
+			Map<String, Object> map = new HashMap<>();
+			map.put("items", items);
+			//页面导航栏的页号顺序
+			map.put("pages", itemService.getPagesByTitle(pageno,title));    
+			return RecordResult.ok(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return RecordResult.build(400, "查询条件出错");

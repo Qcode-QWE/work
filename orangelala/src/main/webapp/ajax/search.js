@@ -6,31 +6,44 @@ function search(pageno,title,sorttype){
 		data:"pageno="+pageno+"&title="+title+"&sorttype="+sorttype,
 		dataType:"json",
 		success:function(data){
-			if(data.status==200){   
+			if(data.status==200){ 
+				console.log(data);
 				var html="";    
-				for(var i = 0 ; i< data.data.length;i++){
-					html += "<li><div class='i-pic limit' onclick='goIntro("+data.data[i].id+")'>";
+				for(var i = 0 ; i< data.data.items.length;i++){
+					html += "<li><div class='i-pic limit' onclick='goIntro("+data.data.items[i].id+")'>";
 					var img = "<img src='images/phone.jpg' />";
-					var p1 = "<p class='title f1'>"+data.data[i].title+"</p>";
-					var p2 = "<p class='price f1'><b>¥</b><strong>"+data.data[i].price/100+"</strong></p>";
-					var p3 = "<p class='number f1'>销量<span>"+data.data[i].num+"</span></p>"
+					var p1 = "<p class='title f1'>"+data.data.items[i].title+"</p>";
+					var p2 = "<p class='price f1'><b>¥</b><strong>"+data.data.items[i].price/100+"</strong></p>";
+					var p3 = "<p class='number f1'>销量<span>"+data.data.items[i].num+"</span></p>"
 					html += img+p1+p2+p3;
 					html += "</div></li>";
 				}
 				$("#items").html(html);
+				//回显分页导航栏页数标签
+				showPages(data.data.pages);
 			}
 			else if(data.status==400){
 				alert("400错误！抛出异常了");
 			}
+			
 		},
 		error:function(){
 			alert("请求失败");
 		}
 	})
 }   
-  
+
+//进入商品详情页面
 function goIntro(id){
 	window.location.replace("http://localhost:8080/orangelala/introduction/to.html?id="+id);
+}
+
+//回显分页导航栏页数标签
+function showPages(pages){
+	var page = $(".page_num");
+	for(var i = 0 ; i<page.length;i++){
+		page.eq(i).children().text(pages[i]);
+	}
 }
 $(document).ready(function(){
 	//载入缓存后执行第一次搜索
@@ -61,4 +74,13 @@ $(document).ready(function(){
 		return false;
 		
 	})
+	$(".firstPage").click(function(){
+		pageno =1;
+		search(pageno,searchname,sorttype);
+	})
+	$(".lastPage").click(function(){
+		pageno =-1;
+		search(pageno,searchname,sorttype);
+	})
+	
 })

@@ -15,6 +15,7 @@ public interface ItemService {
     public int updateKillItem(Long id) throws Exception;
     public List<Item> getItmesById(List<Long> ids) throws Exception;
     public void updateItem(Item item)throws Exception;
+	public int[] getPagesByTitle(int pageno, String title);
 
 
 }
