@@ -104,8 +104,8 @@ public class PayController {
    	    order.setStatus(0);
    	    // 用户id
    	    HttpSession session = request.getSession();
-   	    //User user = (User) session.getAttribute("user");
-   	    order.setUserId(7L);
+   	    User user = (User) session.getAttribute("user");
+   	    order.setUserId(user.getId());
    	    //顶单编号
    	    String oId = String.valueOf(new Date().getTime());
    	    order.setOrderId(oId);
@@ -134,7 +134,7 @@ public class PayController {
      */
     @RequestMapping("/carToPay")
     public ModelAndView carToPay(@RequestParam("ids")String ids,@RequestParam(value="nums",defaultValue="[0]")String numlist,HttpServletRequest request){
-	try {
+	try {  
 	    List<Long> idlList = JsonUtils.jsonToList(ids, Long.class);
 	    List<Integer> nums = JsonUtils.jsonToList(numlist, Integer.class);
 	    //根据商品id查询商品
@@ -148,7 +148,7 @@ public class PayController {
 	    //获取用户id
 	    HttpSession session = request.getSession();
 	    User user = (User) session.getAttribute("user");
-	    order.setUserId(user.getId());
+	    order.setUserId(user.getId());  //模仿用户id=18
 	    //更加userId获取car
 	    Car car = carService.getCarByUserId(user.getId());
 	    List<OrdeItem> orderItems = new ArrayList<OrdeItem>();
@@ -216,13 +216,23 @@ public class PayController {
 	    order.setBuyerMessage(msg);
 	    //
 	    orderService.updateOrder(order);
+	    //根据orderId获取order-item
+	    List<OrdeItem> orderItems = orderItemService.getByOrderId(orderId);
+	    for(OrdeItem orderItem:orderItems){
+		Item item = itemService.getItemById(Long.valueOf(orderItem.getItemId()));
+		//修改商品的数量
+		int num = item.getNum();
+		int num1 = orderItem.getNum();
+		item.setNum(num-num1);
+		item.setUpdated(new Date());
+		itemService.updateItem(item);
+	    }
 	    return new ModelAndView("success");
 	} catch (Exception e) {
 	    // TODO 自动生成的 catch 块
 	    e.printStackTrace();
 	    return new ModelAndView("error/error");
 	}
-	
     }
     
     

@@ -157,13 +157,13 @@ public class IntroductionController {
 			//获取user
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute("user");
-			Car car = carService.getCarByUserId(18L);
+			Car car = carService.getCarByUserId(user.getId());
 			//如果当前用户的购物车还没创建
 		    if(car==null) {
 		    	car = new Car();
-		    	car.setUserId(18L);
-		    	carService.addCar(car);
-		    	car = carService.getCarByUserId(18L);
+		    	car.setUserId(user.getId());
+		    	carService.addCar(car);  
+		    	car = carService.getCarByUserId(user.getId());
 		    }
 		    Long carId=car.getCarId();
 			List<CarItem> carItems = carItemService.getCarItems(carId);
@@ -185,4 +185,7 @@ public class IntroductionController {
 		}
 	}
 
+    public static void main(String[] args) {
+	System.out.println(new Date().getTime());
+    }
 }

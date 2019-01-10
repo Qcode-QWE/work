@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>付款成功页面</title>
-<link rel="stylesheet"  type="text/css" href="../AmazeUI-2.4.2/assets/css/amazeui.css"/>
-<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
-<link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet"  type="text/css" href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/amazeui.css"/>
+<link href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/basic/css/demo.css" rel="stylesheet" type="text/css" />
 
-<link href="../css/sustyle.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
+<link href="${pageContext.request.contextPath}/css/sustyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/basic/js/jquery-1.7.min.js"></script>
 
 </head>
 
@@ -38,9 +38,9 @@
 <!--悬浮搜索框-->
 
 <div class="nav white">
-	<div class="logo"><img src="../images/logo.png" /></div>
+	<div class="logo"><img src="${pageContext.request.contextPath}/images/logo.png" /></div>
     <div class="logoBig">
-      <li><img src="../images/logobig.png" /></li>
+      <li><img src="${pageContext.request.contextPath}/images/logobig.png" /></li>
     </div>
     
     <div class="search-bar pr">

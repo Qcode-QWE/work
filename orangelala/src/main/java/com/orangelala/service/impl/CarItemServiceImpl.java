@@ -23,7 +23,7 @@ import com.orangelala.service.CarItemService;
  * <p>Description: </p>   
  * @author QEcode  
  * @date 2019年1月8日  
- * @version 1.0  
+ * @version 1.0    
  */
 @Service
 public class CarItemServiceImpl implements CarItemService {

@@ -208,58 +208,29 @@ $("document").ready(function(){
 	
 	
 	/**
-	 * 点击支付异步发送需支付的商品列表 
+	 * 点击支付异步发送需支付的商品列表和数量
 	 */    
 	$("#J_Go").click(function(){
 		var check=$(".check");  
 		var num=$(".text_box"); 
 		var itemId=$(".itemId");
-		var data={};
-		var catItemId=[];
-		var number=[];    
+	//	var data={};
+		var ids=[];
+		var nums=[];    
+		alert(ids);    
 		for(var i = 0;i<itemId.length;i++){   
 			if(check.eq(i).prop("checked")==true){
-				catItemId.push(parseInt(itemId.eq(i).val()));
-				number.push(parseInt(num.eq(i).val()));   
-			}      
-		}       
-		data['catItemId']=catItemId;
-		data['number']=number;
-		var json = JSON.stringify(data);   
-		console.log(json);     
-		var url = "/orangelala/carToPay.html";   
-		$.ajax(
-			{
-				type: "post",
-				timeout : 5000,    //设置超时时间5秒钟
-		        url: url,    
-		        data: json,
-		        traditional: true,
-		        cache: false,
-		        async : true,    //async必须设置为async:true，timeout才生效；如果设置为async:false，则锁住浏览器，禁止一切操作，直到请求有返回结果。
-		        dataType: "json",
-		        success: function (data)
-		        {
-		        	if(data.status==200){
-		        		alert("支付成功！");
-		        	}else{
-		        		//载入缓存失败图片
-//			        		var div = $(".ml-22");
-//			        		div.empty();
-//			        		div.append('<img src="images/loading.gif" style="width:20px"/>');
-		        	}
-		        },  
-		        error:function (data,status) { 
-	        		if(status=='timeout'){
-		        		alert("请求超时");  
-		        		ajaxTimeOut.abort();//取消请求
-		        	//	window.location.href="index.jsp";
-		        	}else{
-		        		 alert("请求失败！");
-		        	}
-		        }
-			}
-		);
+				ids.push(parseInt(itemId.eq(i).val()));
+				nums.push(parseInt(num.eq(i).val()));     
+			}        
+		}               
+	//	data['catItemId']=catItemId;      
+	//	data['number']=number;              
+	//	ids=JSON.stringify(ids);                 
+	//	nums=JSON.stringify(nums);         
+//		window.location.replace("http://localhost:8080/orangelala/carToPay.html?ids="+ids+"&nums="+nums);    
+		window.location.replace("http://localhost:8080/orangelala/carToPay.html?ids="+escape(JSON.stringify(ids))+"&nums="+escape(JSON.stringify(nums)));      
+//		window.location.replace("http://localhost:8080/orangelala/carToPay.html?ids=%5B679533,679533,1188043,562379,536563%5D&nums=%5B5,1,2,4,1%5D");      
 		
 		
 	})

@@ -11,4 +11,5 @@ public interface ItemService {
     public List<Item> getKillItem() throws Exception;
     public Item getItemById(Long id) throws Exception;
     public List<Item> getItmesById(List<Long> ids) throws Exception;
+    public void updateItem(Item item)throws Exception;
 }
