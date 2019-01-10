@@ -147,3 +147,60 @@ $(function(){
 	
 })
 
+//秒杀
+$(function(){
+	//秒杀点击
+	function killClick() {
+		var h = $(".hh").html();
+		var m = $(".mm").html();
+		var s = $(".ss").html();
+		alert(0);
+		//判断秒杀是否开始
+		if(h=="00"&&m=="00"&&s=="00"){
+			//判断能否秒杀
+			var url = "home/secondsKill/itemAble.html";
+			var id = $(this).attr("name");
+			data = {"id":id,"num":1};
+			$.ajax({
+				type: "get",
+				timeout : 5000,  
+		        url: url,
+		        data: data,
+		        traditional: true,
+		        cache: false,  
+		        async : true,
+		        dataType: "json",
+		        success:function(data){
+		        	console.log(data);
+		        	if(data==0){
+		        		//还没开始
+		        		alert("秒杀还没开始");
+		        	}else if(data==1){
+		        		alert("秒杀失败");
+		        	}else if(data==2){
+		        		window.location.replace("http://localhost:8080/orangelala/ItemtoPay.html?id="+id+"&num="+1);
+		        	}
+		        },  
+		        error:function (data,status) { 
+		    		if(status=='timeout'){
+		        		alert("请求超时");
+		        		ajaxTimeOut.abort();//取消请求
+		        	//	window.location.href="index.jsp";
+		        	}else{
+		        		 alert("请求失败！");
+		        	}
+		        }
+			})
+		}else {
+			alert("秒杀还没开始");
+		}	
+	}
+})
+
+
+
+
+
+
+
+

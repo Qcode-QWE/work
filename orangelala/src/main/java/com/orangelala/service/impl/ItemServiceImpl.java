@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import redis.clients.jedis.Jedis;
 
@@ -74,7 +75,7 @@ public class ItemServiceImpl implements ItemService {
      * @return(0:还没开始,1:秒杀失败,2:秒杀成功)
      * @throws Exception
      */
-    @Override
+    
     public int updateKillItem(Long id) throws Exception {
 	//判断秒杀是否开始
 	//Jedis jedis = JedisUtils.getJedis();
