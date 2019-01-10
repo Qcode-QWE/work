@@ -37,7 +37,8 @@ $(document).ready(function(){
 	var sorttype = "default";
 	$("#ai-topsearch").click(function(){
 		title = $("#searchInput").val();
-		window.location.href("localhost:8080/orangelala/searchUI.html");
+		alert(title);
+		window.location.replace("http://localhost:8080/orangelala/searchUI.html");
 		return false;
 	})
 })
