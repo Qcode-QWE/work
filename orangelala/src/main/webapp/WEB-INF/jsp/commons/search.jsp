@@ -1,15 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<script src="${pageContext.request.contextPath}/ajax/search.js"></script>
-<script type="text/javascript">
-	$("#search_form").submit(function(){
-		alert(123);
-		var title = $("#searchInput").val();
-		
-	})
+<script src="${pageContext.request.contextPath}/ajax/commons_search.js"></script>
 
-</script>
 
 <div class="nav white">
 	<div class="logo"><img src="${pageContext.request.contextPath}/images/logo.png" /></div>
