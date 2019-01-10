@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import redis.clients.jedis.Jedis;
 
@@ -74,11 +75,12 @@ public class ItemServiceImpl implements ItemService {
      * @return(0:还没开始,1:秒杀失败,2:秒杀成功)
      * @throws Exception
      */
-    @Override
+    
     public int updateKillItem(Long id) throws Exception {
 	//判断秒杀是否开始
-	Jedis jedis = JedisUtils.getJedis();
-	String str = jedis.get("KILLITEMFLAGE");
+	//Jedis jedis = JedisUtils.getJedis();
+	//String str = jedis.get("KILLITEMFLAGE");
+	String str = "1";
 	//秒杀还没开始
 	if(str!=null&&str.length()>0){
 	   return 0;
@@ -86,20 +88,21 @@ public class ItemServiceImpl implements ItemService {
 	    // 判断商品是否已经被秒杀
 	    if(!flage){
 		synchronized (flage) {
-		    str = jedis.get("KILLITEMNUM-" + id);
+		   // str = jedis.get("KILLITEMNUM-" + id);
+		    str = "1";
 		    int num = Integer.valueOf(str);
 		    if (num > 0) {
-			jedis.set("KILLITEMNUM-" + id, String.valueOf(num-1));
-			JedisUtils.close(jedis);
+			//jedis.set("KILLITEMNUM-" + id, String.valueOf(num-1));
+			//JedisUtils.close(jedis);
 			flage = true;
 			return 2;
 		    }else{
-			JedisUtils.close(jedis);
+			//JedisUtils.close(jedis);
 			return 1;
 		    }
 		}
 	    }
-	    JedisUtils.close(jedis);
+	    //JedisUtils.close(jedis);
 	    return 1;
 	}
     }

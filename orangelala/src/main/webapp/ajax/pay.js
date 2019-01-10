@@ -9,7 +9,7 @@ $(function() {
 		//var nums = [1];
 		//nums = JSON.stringify(nums);
 		window.location.replace("http://localhost:8080/orangelala/payItem.html?orderId="+orderId+"&msg="+msg);
-		//window.location.replace("http://localhost:8080/orangelala/pay/carToPay.html?ids="+ids+"&nums="+nums);
+		//window.location.replace("http://localhost:8080/orangelala/carToPay.html?ids="+ids+"&nums="+nums);
 	});
 
 })

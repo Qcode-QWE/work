@@ -138,7 +138,10 @@ public class PayController {
 	    List<Long> idlList = JsonUtils.jsonToList(ids, Long.class);
 	    List<Integer> nums = JsonUtils.jsonToList(numlist, Integer.class);
 	    //根据商品id查询商品
-	    List<Item> items = itemService.getItmesById(idlList);
+	    //List<Item> items = itemService.getItmesById(idlList);
+	    //根据carItemId查询car-item对象
+	    List<CarItem> carItems = carItemService.getCarItemsByIds(idlList);
+	    
 	    //生成一个订单对象
 	    Order order = new Order();
 	    order.setOrderId(String.valueOf(new Date().getTime()));
@@ -154,7 +157,15 @@ public class PayController {
 	    List<OrdeItem> orderItems = new ArrayList<OrdeItem>();
 	    //对每个商品生成一个order-item对象
 	    Long price = 0L;
-	    for(Item item:items){
+	    int i = 0;
+	    for(CarItem carItem:carItems){
+		//修改caritem
+		carItem.setNumber(nums.get(i));
+		i++;
+		// 更新
+		carItemService.updateCarItem(carItem);
+		//获取商品
+		Item item = itemService.getItemById(carItem.getId());
 		//创建商品-订单对象
 		OrdeItem orderItem = new OrdeItem();
 		//id
@@ -166,14 +177,14 @@ public class PayController {
 		orderItem.setOrderId(order.getOrderId());
 		//购买数量
 		//根据carId和itemId查询car-item
-		CarItem carItem = carItemService.getByItemidAndCid(item.getId(), car.getCarId());
+		//CarItem carItem = carItemService.getByItemidAndCid(item.getId(), car.getCarId());
 		orderItem.setNum(carItem.getNumber());
 		//标题
 		orderItem.setTitle(item.getTitle());
 		//价格
 		orderItem.setPrice(item.getPrice()/100);
 		//总额
-		orderItem.setTotalFee(orderItem.getPrice()*orderItem.getNum()/100);
+		orderItem.setTotalFee(orderItem.getPrice()*orderItem.getNum());
 		//图片
 		orderItem.setPicPath(item.getImage());
 		//保存

@@ -21,14 +21,15 @@
 		<script language="javascript" type="text/javascript">  
 			var timer = null;
 			window.onload = function(){
+				var d2Ms = (new Date()).getTime()+9;
 				//开启定时器
 				timer = setInterval(show,1000);
 				//回调函数
 				function show(){
 					var d1 = new Date();//获取到当前的时间
 					var d1Ms = d1.getTime();
-					var d2 = new Date(2019,0,8,15,53,0);
-					var d2Ms = d2.getTime();
+					//var d2 = new Date(2019,0,8,15,53,0);
+					//var d2Ms = d2.getTime()+900000;
 					var differMs = d2Ms-d1Ms;//相差的毫秒数
 					if(differMs<0){
 						return;
@@ -905,7 +906,7 @@
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
                            	   <div class="s-price">￥<b>9.90</b>
-                           	   	  <a class="s-buy" href="#">秒杀</a>
+                           	   	  <a class="s-buy" href="javascript:void(0);" name="54227992398604"  onclick="killClick()">秒杀</a>
                            	   </div>                          	  
                            </div>								
 						</div>
@@ -917,7 +918,7 @@
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
                            	   <div class="s-price">￥<b>9.90</b>
-                           	   	  <a class="s-buy" href="#">秒杀</a>
+                           	   	  <a class="s-buy" href="javascript:void(0);" name="54227992398601" onclick="killClick()">秒杀</a>
                            	   </div>                          	  
                            </div>								
 						</div>					
@@ -929,7 +930,7 @@
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
                            	   <div class="s-price">￥<b>9.90</b>
-                           	   	  <a class="s-buy" href="#">秒杀</a>
+                           	   	  <a class="s-buy" href="javascript:void(0);" name="54227992398602" onclick="killClick()">秒杀</a>
                            	   </div>                          	  
                            </div>								
 						</div>
@@ -941,7 +942,7 @@
                            <div class="s-info">
                            	   <a href="#"><p class="s-title">ZEK 原味海苔</p></a>
                            	   <div class="s-price">￥<b>9.90</b>
-                           	   	  <a class="s-buy" href="#">秒杀</a>
+                           	   	  <a class="s-buy" href="javascript:void(0);" name="54227992398603" onclick="killClick()">秒杀</a>
                            	   </div>                          	  
                            </div>								
 						</div>

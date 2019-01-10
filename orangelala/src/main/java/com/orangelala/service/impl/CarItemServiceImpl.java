@@ -56,5 +56,29 @@ public class CarItemServiceImpl implements CarItemService {
 	CarItem carItem = carItems.get(0);
 	return carItem;
     }
+    /**
+     * @Description:
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<CarItem> getCarItemsByIds(List<Long> ids) throws Exception {
+	CarItemExample example = new CarItemExample();
+	Criteria criteria = example.createCriteria();
+	criteria.andCarIdIn(ids);
+	List<CarItem> carItems = carItemMapper.selectByExample(example);
+	
+	return carItems;
+    }
+    /**
+     * @Description:
+     * @param carItem
+     * @throws Exception
+     */
+    @Override
+    public void updateCarItem(CarItem carItem) throws Exception {
+	carItemMapper.updateByPrimaryKey(carItem);
+    }
     
 }
