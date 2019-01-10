@@ -94,8 +94,9 @@ function findTwoAndThreeByOne(id,num){
 		        		for(var threeLen=0;threeLen<data.data.subnavThree[data.data.subnavTwo[twoLen].name].length;threeLen++){
 		        			var subnavThree=data.data.subnavThree[data.data.subnavTwo[twoLen].name];
 		        			var txt4=$("<dd></dd>");    
-	 	        			var txt5=$("<a title='' href='#' id=''></a>");
+	 	        			var txt5=$("<a title='' href='' id=''></a>");
 		        			txt5.attr('title',subnavThree[threeLen].name );
+		        			txt5.attr('href',"http://localhost:8080/orangelala/searchUI.html?title="+subnavThree[threeLen].name );
 		        			txt5.attr('id',subnavThree[threeLen].id );
 		        			txt5.text(subnavThree[threeLen].name);
 		        			var txt6=$("<span ></span>");
@@ -153,8 +154,8 @@ $(function(){
 	        	console.log(data);
 	        	var slides = $(".am-slides").children();      
 	        	for(var i=0;i<data.data.length;i++){    
-	        		slides.eq(i).children().attr("href",data.data[i].url);
-	        		slides.eq(i).children().children().attr("src","/"+data.data[i].pic);
+	        		slides.eq(i).children().attr("href","http://localhost:8080/orangelala/searchUI.html?title=手机");
+	        		slides.eq(i).children().children().attr("src",data.data[i].pic);  
 	        	}
         	}else{
         		//载入缓存失败图片
@@ -202,7 +203,7 @@ $(function(){
         		console.log(data);
             	var slides = $(".row").children();      
             	for(var i=0;i<data.data.length;i++){    
-            		slides.eq(i).children().attr("href",data.data[i].url);
+            		slides.eq(i).children().attr("href","http://localhost:8080/orangelala/searchUI.html?title=手机");
             		slides.eq(i).children().children().attr("src","/"+data.data[i].pic);
             	}
         	}else{
@@ -337,9 +338,21 @@ $(function(){
 })
 
 
-
-
-
-
-
+/**
+ * 从home页面跳转到商品详情页面/登录注册页面
+ * @returns   
+ */
+$("document").ready(function(){
+	/*$("a").click(function(){
+		$(this).attr("href","http://localhost:8080/orangelala/introduction/to.html?id=536563");
+	})*/
+	$("#loginPage").click(function(){
+		window.location.replace("http://localhost:8080/orangelala/loginUI.html");   
+	})
+	$("#registerPage").click(function(){
+		window.location.replace("http://localhost:8080/orangelala/registerUI.html");   
+	})
+	
+	
+})
 

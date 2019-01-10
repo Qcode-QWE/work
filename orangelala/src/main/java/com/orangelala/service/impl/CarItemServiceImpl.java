@@ -23,7 +23,7 @@ import com.orangelala.service.CarItemService;
  * <p>Description: </p>   
  * @author QEcode  
  * @date 2019年1月8日  
- * @version 1.0  
+ * @version 1.0    
  */
 @Service
 public class CarItemServiceImpl implements CarItemService {
@@ -45,7 +45,7 @@ public class CarItemServiceImpl implements CarItemService {
      * @param cid
      * @return
      * @throws Exception
-     */
+     */   
     @Override
     public CarItem getByItemidAndCid(Long itemId, Long cid) throws Exception {
 	CarItemExample example = new CarItemExample();
@@ -65,10 +65,9 @@ public class CarItemServiceImpl implements CarItemService {
     @Override
     public List<CarItem> getCarItemsByIds(List<Long> ids) throws Exception {
 	CarItemExample example = new CarItemExample();
-	Criteria criteria = example.createCriteria();
-	criteria.andCarIdIn(ids);
+	Criteria criteria = example.createCriteria();  
+	criteria.andIdIn(ids);   
 	List<CarItem> carItems = carItemMapper.selectByExample(example);
-	
 	return carItems;
     }
     /**
@@ -80,5 +79,24 @@ public class CarItemServiceImpl implements CarItemService {
     public void updateCarItem(CarItem carItem) throws Exception {
 	carItemMapper.updateByPrimaryKey(carItem);
     }
+    
+    
+    /**
+     * @author 澎仔
+     * @Description:根据购物车id查询购物车内的商品
+     */
+	@Override
+	public List<CarItem> getCarItems(Long carId) {
+		CarItemExample carItemExample =new CarItemExample();
+		Criteria criteria = carItemExample.createCriteria();
+		criteria.andCarIdEqualTo(carId);  
+		return carItemMapper.selectByExample(carItemExample);
+	}
+	@Override
+	public void deleteCarItemById(Long id) {
+		carItemMapper.deleteByPrimaryKey(id);
+	}
+    
+   
     
 }

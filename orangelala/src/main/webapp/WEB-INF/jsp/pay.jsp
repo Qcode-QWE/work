@@ -96,9 +96,9 @@
 										<ul class="item-content clearfix">
 											<div class="pay-phone">
 												<li class="td td-item">
-													<div class="item-pic">
+													<div class="item-pic">  
 														<a href="#" class="J_MakePoint">
-															<img src="${orderItem.picPath}" class="itempic J_ItemImg"></a>
+															<img src="/orangelala/images/phone.jpg" style="width:90px" class="itempic J_ItemImg"></a>
 													</div>
 													<div class="item-info">
 														<div class="item-basic-info">
@@ -226,28 +226,8 @@
 						<div class="clear"></div>
 					</div>
 				</div>
-				<div class="footer">
-					<div class="footer-hd">
-						<p>
-							<a href="#">菜鸟科技</a>
-							<b>|</b>
-							<a href="#">商城首页</a>
-							<b>|</b>
-							<a href="#">支付宝</a>
-							<b>|</b>
-							<a href="#">物流</a>
-						</p>
-					</div>
-					<div class="footer-bd">
-						<p>
-							<a href="#">关于菜鸟</a>
-							<a href="#">合作伙伴</a>
-							<a href="#">联系我们</a>
-							<a href="#">网站地图</a>
-							<em>© 2015-2025  <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">菜鸟科技</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">菜鸟科技</a></em>
-						</p>
-					</div>
-				</div>
+				<!--引导页脚 -->
+		<jsp:include page="commons/footer.jsp"></jsp:include>  
 			</div>
 			<div class="theme-popover-mask"></div>
 			<div class="theme-popover">

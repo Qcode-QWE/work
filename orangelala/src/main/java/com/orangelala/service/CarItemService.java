@@ -23,4 +23,11 @@ public interface CarItemService {
     public CarItem getByItemidAndCid(Long Itemid,Long cid) throws Exception;
     public List<CarItem> getCarItemsByIds(List<Long> ids) throws Exception;
     public void updateCarItem(CarItem carItem) throws Exception;
+    /**
+     * 根据购物车id查询购物车内的商品
+     * @param carId
+     * @return
+     */
+	public List<CarItem> getCarItems(Long carId);
+	public void deleteCarItemById(Long id);
 }

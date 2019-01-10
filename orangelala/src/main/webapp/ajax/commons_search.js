@@ -1,6 +1,6 @@
 function search(pageno,title,sorttype){
-	alert(pageno+title+sorttype);
-	url = "searchUI/findall.html";
+//	alert(pageno+title+sorttype);
+	url = "/orangelala/searchUI/findall.html";  
 	$.ajax({
 		type:"get",
 		url:url,
@@ -30,15 +30,17 @@ function search(pageno,title,sorttype){
 	})
 }
 
-
+/**
+ * 主页搜索点击事件重定向搜索页面
+ * @returns
+ */
 $(document).ready(function(){
 	var title = "";
 	var pageno = 1;
 	var sorttype = "default";
 	$("#ai-topsearch").click(function(){
 		title = $("#searchInput").val();
-		alert(title);
-		window.location.replace("http://localhost:8080/orangelala/searchUI.html");
+		window.location.replace("http://localhost:8080/orangelala/searchUI.html?title="+title);
 		return false;
 	})
 })

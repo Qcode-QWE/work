@@ -119,6 +119,9 @@ public class ItemServiceImpl implements ItemService {
 	return item;
     }
 
+
+    
+
     /**
      * @Description:根据id列表获取多个商品
      * @param ids

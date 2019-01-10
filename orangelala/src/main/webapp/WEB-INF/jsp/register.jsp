@@ -63,28 +63,8 @@
 		</div>
 	</div>
 			
-	<div class="footer ">
-		<div class="footer-hd ">
-			<p>
-				<a href="# ">菜狗集团</a>
-				<b>|</b>
-				<a href="${pageContext.request.contextPath}/home.html">商城首页</a>
-				<b>|</b>
-				<a href="# ">支付宝</a>
-				<b>|</b>
-				<a href="# ">物流</a>
-			</p>
-		</div>
-		<div class="footer-bd ">
-			<p>
-				<a href="# ">关于悦桔</a>
-				<a href="# ">合作伙伴</a>
-				<a href="# ">联系我们</a>
-				<a href="# ">网站地图</a>
-				<em>© 2015-2025 Orangelala.com 版权所有. 更多咨询 <a href="#" target="_blank" title="悦桔拉拉"></a> - Bulid By <a href="#" title="Orangelala" target="_blank">Orangelala</a></em>
-			</p>
-		</div>
-</div>
+	<!--引导页脚 -->
+		<jsp:include page="commons/footer.jsp"></jsp:include>  
 </body>
 
 </html>

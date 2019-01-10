@@ -80,15 +80,15 @@ public class HomeController {
 	    map.put("subnavTwo", itemCats);
 	    //三级菜单类目
 	    Map<String, Object> itemMap = new HashMap<String,Object>();
-	    List<Item> items;
+	    List<ItemCat> items;
 	    if(itemCats!=null && itemCats.size()>0){
 		for(ItemCat itemCat:itemCats){
-		    items = itemService.getItemsByItemCat(itemCat);
+			items = itemCatService.getThreeItemCats(itemCat.getId());
 		    itemMap.put(itemCat.getName(), items);
 		}
 	    }
 	    map.put("subnavThree",itemMap);
-	    return RecordResult.ok(map);
+	    return RecordResult.ok(map); 
 	} catch (Exception e) {
 	    e.printStackTrace();
 	    return RecordResult.build(400, "发生了错误");

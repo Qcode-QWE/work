@@ -132,7 +132,7 @@ public class PayController {
      * @param ids
      * @return
      */
-    @RequestMapping("/carToPay")
+    @RequestMapping("/carToPay")    
     public ModelAndView carToPay(@RequestParam("ids")String ids,@RequestParam(value="nums",defaultValue="[0]")String numlist,HttpServletRequest request){
 	try {
 	    List<Long> idlList = JsonUtils.jsonToList(ids, Long.class);
@@ -141,7 +141,6 @@ public class PayController {
 	    //List<Item> items = itemService.getItmesById(idlList);
 	    //根据carItemId查询car-item对象
 	    List<CarItem> carItems = carItemService.getCarItemsByIds(idlList);
-	    
 	    //生成一个订单对象
 	    Order order = new Order();
 	    order.setOrderId(String.valueOf(new Date().getTime()));
@@ -165,7 +164,7 @@ public class PayController {
 		// 更新
 		carItemService.updateCarItem(carItem);
 		//获取商品
-		Item item = itemService.getItemById(carItem.getId());
+		Item item = itemService.getItemById(carItem.getItemId());
 		//创建商品-订单对象
 		OrdeItem orderItem = new OrdeItem();
 		//id
@@ -245,6 +244,7 @@ public class PayController {
 	    return new ModelAndView("error/error");
 	}
 	
+
     }
     
     

@@ -18,13 +18,14 @@
 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/basic/js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
-		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/commons.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/ajax/search.js"></script>
 	</head>
 
 	<body>
-
-		<!--顶部导航条 -->
+		<!-- 搜索关键字隐藏 -->
+		<input  hidden="true" id="searchInput" value="${title}"/>  
+		<!--顶部导航条 -->  
 		<jsp:include page="commons/header.jsp" />
 
 			<!--悬浮搜索框-->
@@ -38,7 +39,7 @@
 				<div class="search-bar pr">
 					<a name="index_none_header_sysc" href="#"></a>
 					<form>
-						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
+						<input id="searchInput" name="index_none_header_sysc" value="${title}" type="text" placeholder="搜索" autocomplete="off">
 						<input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
 					</form>
 				</div>
@@ -68,7 +69,7 @@
 				
 					<div class="am-g am-g-fixed">
 						<div class="am-u-sm-12 am-u-md-12">
-	                  	<div class="theme-popover">														
+	                  	<!-- <div class="theme-popover">														
 							<div class="searchAbout">
 								<span class="font-pale">相关搜索：</span>
 								<a title="坚果" href="#">坚果</a>
@@ -133,7 +134,7 @@
 					        
 							</ul>
 							<div class="clear"></div>
-                        </div>
+                        </div> -->   
 							<div class="search-content">
 								<div class="sort">
 									<li class="sorttype"><a title="default" href="#">综合排序</a></li>
@@ -149,7 +150,7 @@
 							</div>
 							<div class="search-side">
 
-								<div class="side-title">
+								<%-- <div class="side-title">
 									经典搭配
 								</div>
 
@@ -191,48 +192,28 @@
 											销量<span>1110</span>
 										</p>
 									</div>
-								</li>
+								</li> --%>
 
 							</div>
 							<div class="clear"></div>
 							<!--分页 -->
 							<ul class="am-pagination am-pagination-right">
-								<li class="am-disabled"><a href="#">&laquo;</a></li>
+								<li class="firstPage"><a href="#">&laquo;</a></li>
 								<li class="page_num"><a href="#">1</a></li>
 								<li class="page_num"><a href="#">2</a></li>
 								<li class="page_num"><a href="#">3</a></li>
 								<li class="page_num"><a href="#">4</a></li>
 								<li class="page_num"><a href="#">5</a></li>
-								<li><a href="#">&raquo;</a></li>
+								<li class="lastPage"><a href="#">&raquo;</a></li>
 							</ul>
 
 						</div>
 					</div>
-					<div class="footer">
-						<div class="footer-hd">
-							<p>
-								<a href="#">恒望科技</a>
-								<b>|</b>
-								<a href="#">商城首页</a>
-								<b>|</b>
-								<a href="#">支付宝</a>
-								<b>|</b>
-								<a href="#">物流</a>
-							</p>
-						</div>
-						<div class="footer-bd">
-							<p>
-								<a href="#">关于恒望</a>
-								<a href="#">合作伙伴</a>
-								<a href="#">联系我们</a>
-								<a href="#">网站地图</a>
-								<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
-							</p>
-						</div>
-					</div>
+					<!--引导页脚 -->
+				<jsp:include page="commons/footer.jsp"></jsp:include>  
 				</div>
 
-			</div>
+			</div>   
 
 		<!--引导 -->
 		<div class="navCir">

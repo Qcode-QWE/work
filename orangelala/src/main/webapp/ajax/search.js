@@ -1,19 +1,18 @@
 function search(pageno,title,sorttype){
-	alert(pageno+title+sorttype);
-	url = "searchUI/findall.html";
-	$.ajax({
+	url = "/orangelala/searchUI/findall.html";
+	$.ajax({  
 		type:"get",
 		url:url,
 		data:"pageno="+pageno+"&title="+title+"&sorttype="+sorttype,
 		dataType:"json",
 		success:function(data){
-			if(data.status==200){
-				var html="";
+			if(data.status==200){   
+				var html="";    
 				for(var i = 0 ; i< data.data.length;i++){
-					html += "<li><div class='i-pic limit'>";
-					var img = "<img src='images/imgsearch1.jpg' />";
+					html += "<li><div class='i-pic limit' onclick='goIntro("+data.data[i].id+")'>";
+					var img = "<img src='images/phone.jpg' />";
 					var p1 = "<p class='title f1'>"+data.data[i].title+"</p>";
-					var p2 = "<p class='price f1'><b>¥</b><strong>"+data.data[i].price+"</strong></p>";
+					var p2 = "<p class='price f1'><b>¥</b><strong>"+data.data[i].price/100+"</strong></p>";
 					var p3 = "<p class='number f1'>销量<span>"+data.data[i].num+"</span></p>"
 					html += img+p1+p2+p3;
 					html += "</div></li>";
@@ -28,19 +27,17 @@ function search(pageno,title,sorttype){
 			alert("请求失败");
 		}
 	})
+}   
+  
+function goIntro(id){
+	window.location.replace("http://localhost:8080/orangelala/introduction/to.html?id="+id);
 }
-
-
-$(function(){
-	search(1,"","");
-	
-	
-})
-
-
-
 $(document).ready(function(){
-	var searchname="";
+	//载入缓存后执行第一次搜索
+	var title = $("#searchInput").val();
+	search(1,title,"default");    
+	
+	var searchname=title;
 	var pageno=1;
 	var sorttype="default";
 	$("#ai-topsearch").click(function(){
