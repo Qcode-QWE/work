@@ -137,10 +137,10 @@
                         </div> -->   
 							<div class="search-content">
 								<div class="sort">
-									<li class="sorttype"><a title="default" href="#">综合排序</a></li>
+									<!-- <li class="sorttype"><a title="default" href="#">综合排序</a></li>
 									<li ><a title="销量" href="#">销量排序</a></li>
 									<li class="sorttype"><a title="price" href="#">价格优先</a></li>
-									<li class="big"><a title="评价" href="#">评价为主</a></li>
+									<li class="big"><a title="评价" href="#">评价为主</a></li> -->
 								</div>
 								<div class="clear"></div>
 
@@ -209,8 +209,8 @@
 								<li id="totalPage">共<b>5</b>页</li> 
 							</ul>
 							<ul class="am-pagination am-pagination-right">
-								跳转到第<input id="goPage"></input>页   
-							</ul>
+								跳转到第<input id="goPage" placeholder="回车确认"></input>页   
+							</ul>  
 							  
 
 						</div>

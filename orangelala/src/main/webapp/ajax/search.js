@@ -85,13 +85,14 @@ $(document).ready(function(){
 		pageno =-1;
 		search(pageno,searchname,sorttype);
 	})
-	$("#goPage").mousedown(function(){
-		pageno = $(this).val();
-		search(pageno,searchname,sorttype);
-	})
-	$("#goPage").keydown(function(){
-		pageno = $(this).val();
-		search(pageno,searchname,sorttype);
+	  
+	$("#goPage").keyup(function(){
+		if(event.keyCode ==13){
+			pageno = $(this).val();
+			search(pageno,searchname,sorttype);
+		  }
+		
+		
 	})
 	
 })

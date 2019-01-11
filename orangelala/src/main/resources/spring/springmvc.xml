@@ -14,7 +14,8 @@
                    <mvc:mapping path="/ItemtoPay.html" /> 
                    <mvc:mapping path="/carToPay.html" /> 
                    <mvc:mapping path="/payItem.html" /> 
-                   
+                   <mvc:mapping path="/goCar.html" /> 
+                   <mvc:mapping path="/showCar.html" /> 
                    <bean id="commonInterceptor" class="com.orangelala.Interceptor.LoginInterceptor"></bean> <!--这个类就是我们自定义的Interceptor -->
           </mvc:interceptor> 
           <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法  -->
