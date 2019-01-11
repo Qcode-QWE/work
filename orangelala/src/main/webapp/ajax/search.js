@@ -41,9 +41,12 @@ function goIntro(id){
 //回显分页导航栏页数标签
 function showPages(pages){
 	var page = $(".page_num");
-	for(var i = 0 ; i<page.length;i++){
+	//var i ;
+	for( var i=0 ; i<page.length;i++){
 		page.eq(i).children().text(pages[i]);
 	}
+	$("#totalPage").children().text(pages[5]);
+	$("#nowPage").children().text(pages[6]);    
 }
 $(document).ready(function(){
 	//载入缓存后执行第一次搜索
@@ -80,6 +83,14 @@ $(document).ready(function(){
 	})
 	$(".lastPage").click(function(){
 		pageno =-1;
+		search(pageno,searchname,sorttype);
+	})
+	$("#goPage").mousedown(function(){
+		pageno = $(this).val();
+		search(pageno,searchname,sorttype);
+	})
+	$("#goPage").keydown(function(){
+		pageno = $(this).val();
 		search(pageno,searchname,sorttype);
 	})
 	

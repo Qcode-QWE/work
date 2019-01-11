@@ -177,7 +177,6 @@ public class ItemServiceImpl implements ItemService {
     	}
     	
     	items = itemMapper.selectByExample(itemExample);
-    	info=new PageInfo<>(items,5);
     	return items;
     	
     }
@@ -211,7 +210,7 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public int[] getPagesByTitle(int pageno, String title) {
 		ItemExample itemExample = new ItemExample();
-    	//分页
+    	//设置分页参数
     	PageHelper.startPage(1,12);  
     	//查询条件  
     	Criteria criteria = itemExample.createCriteria();
@@ -225,13 +224,17 @@ public class ItemServiceImpl implements ItemService {
     	//分页
     	if(pageno==-1) {
     		//查询最后一页
-    		PageHelper.startPage(info.getPages(),12);
-    	}else {
-    		PageHelper.startPage(pageno,12);
+    		pageno=info.getPages();
     	}
+    	PageHelper.startPage(pageno,12);
     	items = itemMapper.selectByExample(itemExample);
     	info=new PageInfo<>(items,5);
-    	int[] pages = info.getNavigatepageNums();
+    	int[] pages = new int[10];
+    	for(int i = 0 ; i< info.getNavigatepageNums().length;i++) {
+    		pages[i]=info.getNavigatepageNums()[i];
+    	}
+    	pages[5]=info.getPages();
+    	pages[6]=pageno;
 		// TODO Auto-generated method stub
 		return pages;
 	}

@@ -311,7 +311,7 @@ $(function(){
 		        async : true,
 		        dataType: "json",
 		        success:function(data){
-		        	console.log(data);
+		        	console.log(data);  
 		        	if(data==0){
 		        		//还没开始
 		        		alert("秒杀还没开始");

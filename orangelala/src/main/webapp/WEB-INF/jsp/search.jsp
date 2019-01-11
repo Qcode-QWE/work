@@ -198,14 +198,20 @@
 							<div class="clear"></div>
 							<!--分页 -->
 							<ul class="am-pagination am-pagination-right">
-								<li class="firstPage"><a href="#">&laquo;</a></li>
-								<li class="page_num"><a href="#">1</a></li>
+								<li id="nowPage">当前第<b>1</b>页</li>     
+								<li class="firstPage"><a href="#">&laquo;</a></li>  
+								<li class="page_num"><a href="#">1</a></li>  
 								<li class="page_num"><a href="#">2</a></li>
 								<li class="page_num"><a href="#">3</a></li>
-								<li class="page_num"><a href="#">4</a></li>
+								<li class="page_num"><a href="#">4</a></li>  
 								<li class="page_num"><a href="#">5</a></li>
 								<li class="lastPage"><a href="#">&raquo;</a></li>
+								<li id="totalPage">共<b>5</b>页</li> 
 							</ul>
+							<ul class="am-pagination am-pagination-right">
+								跳转到第<input id="goPage"></input>页   
+							</ul>
+							  
 
 						</div>
 					</div>

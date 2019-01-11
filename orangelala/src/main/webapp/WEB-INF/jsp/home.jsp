@@ -23,7 +23,7 @@
 		<script language="javascript" type="text/javascript">  
 			var timer = null;
 			window.onload = function(){
-				var d2Ms = (new Date()).getTime()+9;
+				var d2Ms = (new Date()).getTime()+10000;   
 				//开启定时器
 				timer = setInterval(show,1000);
 				//回调函数
@@ -33,7 +33,7 @@
 					//var d2 = new Date(2019,0,8,15,53,0);
 					//var d2Ms = d2.getTime()+900000;
 					var differMs = d2Ms-d1Ms;//相差的毫秒数
-					if(differMs<0){
+					if(differMs<0){  
 						return;
 					}     
 					var date = parseInt(differMs/(3600*24*1000));//天
